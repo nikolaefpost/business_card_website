@@ -1,0 +1,10 @@
+
+.img_main{
+    background-repeat: no-repeat;
+    background-image: url(public/frontImg.jpg);
+    background-color: #DFDFDF;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}

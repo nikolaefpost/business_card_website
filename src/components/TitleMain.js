@@ -1,11 +1,14 @@
 import React from 'react';
-import NavBar from "./NavBar";
+import {Image} from "react-bootstrap";
+import styles from './components.module.css'
 
 const TitleMain = () => {
+
     return (<>
-            <NavBar/>
-        <div style={{ width: '100%', height: '66vh', marginLeft: '7%', marginTop: '25vh'}} className='mb-lg-2'>
-            <img src='mainTitleImg.png'/>
+
+        <div  className={styles.divTitleMain}>
+            {/*<img  src='mainTitleImg1.png'/>*/}
+            <img src="mainTitleImg1.png"  className={styles.imgTitleMain} />
         </div>
         </>
     );

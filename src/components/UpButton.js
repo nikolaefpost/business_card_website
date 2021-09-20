@@ -12,7 +12,8 @@ const arrowStyle = {
     color: '#FFFBFB',
     backgroundColor: '#CD1BEA',
     borderRadius: "100%",
-    padding: '0 0.5rem'
+    padding: '0 0.5rem',
+    opacity: '0.5',
 }
 
 const UpButton = () => {

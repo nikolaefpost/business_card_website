@@ -13,7 +13,7 @@ const ContactInfo = () => {
                     </div>
                     <div className='col-4 text-end'>Email:</div>
                     <div className='col-8 row'>
-                        <span className='col-12 text-start'>yemelyanov.eduard@gmail.com</span>
+                        <span className='col-12 text-start' style={{color: '#CD1BEA'}}>yemelyanov.eduard@gmail.com</span>
                     </div>
                 </div>
                 <div>

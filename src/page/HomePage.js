@@ -8,6 +8,7 @@ import News from "../components/News";
 import InformQuestions from "../components/inform&questions";
 import UpButton from "../components/UpButton";
 import RingButton from "../components/RingButton";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
 
@@ -37,6 +38,7 @@ const HomePage = () => {
             <MyFolio/>
             <News/>
             <InformQuestions/>
+            <Footer/>
             {scrollPosition>100&&<UpButton/>}
             {scrollPosition<2500&&<RingButton/>}
 

@@ -27,4 +27,14 @@ export const ADD_NEWS = gql`
 }
 `;
 
+export const ADD_CALLBACK = gql`
+    mutation AddCallback($date: String, $time: String, $phone_number: Int!, $description: String) {
+    addCallback(input: {date: $date, time: $time, phone_number: $phone_number, description: $description}) {
+        numUids
+        callback {
+            id
+        }
+    }
+}
+`;
 

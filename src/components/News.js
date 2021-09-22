@@ -7,7 +7,7 @@ const News = () => {
     const { loading, error, data } = useQuery(GET_NEWS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
-    console.log(data.queryNews)
+
     return (
         <>
             <a name='news'></a>
@@ -29,7 +29,7 @@ const News = () => {
                         )}
                     </Row>
                 </Container>
-                <Button variant='outline-secondary' className='col-sm-3 col-lg-2 fw-bold my-sm-3'>ещё</Button>
+                <Button variant='outline-secondary' style={{borderColor: '#CD1BEA'}} className='col-sm-3 col-lg-2 fw-bold my-sm-3'>ещё</Button>
             </div>
         </>
     );

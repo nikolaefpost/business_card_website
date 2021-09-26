@@ -1,8 +1,11 @@
 import React from 'react';
 import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import styles from './components.module.css'
+import { PORTFOLIO_ROUTE} from "../utils/consts";
+import {useHistory} from "react-router-dom";
 
 const MyFolio = () => {
+    const history = useHistory();
     return (
         <>
             <a name='folio'></a>
@@ -40,7 +43,12 @@ const MyFolio = () => {
                     </Row>
                 </Container>
 
-                <Button variant='outline-secondary' className='col-sm-3 col-lg-2 fw-bold my-sm-3'>ещё</Button>
+                <Button variant='outline-secondary'  className='col-sm-3 col-lg-2 fw-bold my-sm-3'
+                        style={{borderColor: '#CD1BEA'}}
+                        onClick={() => {
+
+                            history.push(PORTFOLIO_ROUTE)
+                        }}>ещё</Button>
             </div>
         </>
     );

@@ -1,7 +1,10 @@
 import React from 'react';
 import {Button, Image} from "react-bootstrap";
+import {useHistory} from 'react-router-dom'
+import {ME_ROUTE} from "../utils/consts";
 
 const AboutMe = () => {
+    const history = useHistory();
     return (
         <>
 
@@ -20,7 +23,12 @@ const AboutMe = () => {
                     представьте, если бы нам надо было добавить больше и больше стилей для элемента. И это тот момент,
                     когда инлайновые стили косячат, так как не будут выглядеть чистыми.
                 </div>
-                <Button variant='outline-secondary' className='col-sm-3 col-lg-2 fw-bold my-sm-3'>ещё</Button>
+                <Button variant='outline-secondary' className='col-sm-3 col-lg-2 fw-bold my-sm-3'
+                        style={{borderColor: '#CD1BEA'}}
+                        onClick={() => {
+
+                            history.push(ME_ROUTE)
+                        }}>ещё</Button>
             </div>
         </>
     );

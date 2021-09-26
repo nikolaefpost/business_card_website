@@ -3,12 +3,6 @@ import {Button, Col, Form, Row} from "react-bootstrap";
 import {ADD_CALLBACK} from "../gql/query";
 import {useMutation} from "@apollo/client";
 
-// $(function() {
-//     //задание заполнителя с помощью параметра placeholder
-//     $("#date").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
-//     //задание заполнителя с помощью параметра placeholder
-//     $("#index").mask("999999", {placeholder: " " });
-// });
 
 const GetInTouch = () => {
     let input_date, input_time, input_phone, input_desc;
@@ -20,9 +14,8 @@ const GetInTouch = () => {
 
     return (
         <div className='bg-dark text-center'>
-            <img className='' style={{marginTop: '10vh'}} src='ContactImg.png'/>
-            <h3 className='mt-5'>Перезвонить вам?</h3>
-            <Form className='mt-3' onSubmit={e => {
+            <img className='' style={{marginTop: '10vh'}} src='GetInTouch.png'/>
+            <Form className='mt-5' onSubmit={e => {
                       e.preventDefault();
 
                       addCallback({
@@ -80,7 +73,7 @@ const GetInTouch = () => {
                     </Form.Group>
                 </Row>
 
-                <Button variant="outline-secondary" type="submit">
+                <Button variant="outline-secondary" type="submit" style={{borderColor: '#CD1BEA'}}>
                     Жду звонка!
                 </Button>
             </Form>

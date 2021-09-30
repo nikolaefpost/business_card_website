@@ -4,13 +4,13 @@ import {Container, Image, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
 import {HOME_ROUTE, PORTFOLIO_ROUTE} from "../utils/consts";
 
-const NavBar = () => {
+const NavBar = (props) => {
     const history = useHistory();
     return (
         <>
             <a name='top'></a>
             <Navbar style={{backgroundColor: '#F9F4F1'}} expand="xl">
-                <Container>
+                <Container bg="dark">
                     <Navbar.Brand href=""  onClick={() => {history.push(HOME_ROUTE)}}>
                         <Image src="headerImg1.png" fluid/>
                     </Navbar.Brand>

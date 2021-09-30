@@ -1,11 +1,11 @@
 import React from 'react';
-import {Container} from "react-bootstrap";
+import {Container, Image} from "react-bootstrap";
 
 const TitleAboutMe = () => {
     return (
-        <div className='text-light py-5' style={{background: 'linear-gradient(to bottom, #F9F4F1, #212529)'}}>
+        <div className='text-light ' style={{background: 'linear-gradient(to bottom, #F9F4F1, #212529)'}}>
             <Container>
-                <h3 >Давайте знакомится! Я - Виктория.</h3>
+                <Image src="aboutMeImg1.png"  fluid/>
             </Container>
         </div>
     );

@@ -1,9 +1,12 @@
 import React from 'react';
+import classNames from "classnames";
+import styles from "./ContactInfo.module.scss"
+import title from "../../assets/images/ContactImg.png"
 
 const ContactInfo = () => {
     return (
         <div className='bg-dark text-center'>
-            <img className='' style={{marginTop: '10vh'}} src='ContactImg.png'/>
+            <img className='' style={{marginTop: '10vh'}} src={title}/>
             <div className='text-center mt-5'>
                 <div className='row mb-3'>
                     <div className='col-4 text-end'>Телефон:</div>
@@ -13,7 +16,7 @@ const ContactInfo = () => {
                     </div>
                     <div className='col-4 text-end'>Email:</div>
                     <div className='col-8 row'>
-                        <span className='col-12 text-start' style={{color: '#CD1BEA'}}>yemelyanov.eduard@gmail.com</span>
+                        <span className={classNames('col-12 text-start', styles.email)} >yemelyanov.eduard@gmail.com</span>
                     </div>
                 </div>
                 <div>

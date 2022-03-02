@@ -1,4 +1,4 @@
-import React, {useRef, useState, useLayoutEffect} from 'react';
+import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import {Carousel, Container} from "react-bootstrap";
@@ -10,12 +10,13 @@ const PortfolioPage = () => {
 
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
-    const [contentHeight, setContentHeight] = useState();
+    const [contentHeight, setContentHeight] = useState()
 
-    console.log(navbarHeight, footerHeight)
-    console.log(contentHeight)
+    console.log(navbarHeight, footerHeight, contentHeight)
+
 
     useLayoutEffect(() => {
+        console.log(navbarRef.current)
         if (navbarRef.current) {
             setNavbarHeight(navbarRef.current.offsetHeight);
         }
@@ -27,11 +28,16 @@ const PortfolioPage = () => {
         }
     }, []);
 
-    useLayoutEffect(() => {
-        if (navbarHeight&&footerHeight) {
-            setContentHeight(document.body.clientHeight - navbarHeight-footerHeight);
-        }
-    }, []);
+    useEffect(()=>{
+        setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-footerHeight))
+    },[navbarHeight, footerHeight, document.documentElement.clientHeight])
+
+    // let contentHeight;
+    // if(navbarHeight&&footerHeight){
+    //     contentHeight = document.documentElement.clientHeight - navbarHeight-footerHeight-80;
+    //     console.log(document.documentElement.clientHeight)
+    // }
+
 
     const numbers = ["folio/myFolio1.jpg", "folio/myFolio2.jpg", "folio/myFolio3.jpg", "folio/myFolio4.jpg",
         "folio/myFolio5.jpg"];
@@ -41,8 +47,8 @@ const PortfolioPage = () => {
                 <NavBar   />
             </div>
 
-            <Container style={{height: contentHeight}}>
-                <Carousel fade>
+            <Container style={{height: contentHeight? contentHeight: 'auto', overflow: "hidden"}} className='d-flex flex-column justify-content-center'>
+                <Carousel fade nextLabel='' prevLabel='' className='my-auto'>
                     {numbers.map((number) =>
                         <Carousel.Item key={number.toString()}>
                             <img
@@ -54,6 +60,7 @@ const PortfolioPage = () => {
                         </Carousel.Item>)}
                 </Carousel>
             </Container>
+
 
             <div ref={footerRef}>
                 <Footer/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
-import ContactInfo from "./ContactInfo";
+import ContactInfo from "./ContactInfo/ContactInfo";
 import GetInTouch from "./GetInTouch";
 
 const InformQuestions = () => {

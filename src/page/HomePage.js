@@ -2,13 +2,23 @@ import React, {useEffect, useState} from 'react';
 import NavBar from "../components/NavBar";
 import ImgMain from "../components/ImgMain";
 import TitleMain from "../components/TitleMain";
-import AboutMe from "../components/AboutMe";
+import AboutMe from "../components/AboutMe/AboutMe";
 import MyFolio from "../components/MyFolio";
 import News from "../components/News";
 import InformQuestions from "../components/inform&questions";
-import UpButton from "../components/UpButton";
-import RingButton from "../components/RingButton";
+import UpButton from "../components/Button/UpButton";
+import RingButton from "../components/Button/RingButton";
 import Footer from "../components/Footer";
+
+const text = "JSX это препроцессорный шаг, который добавляет XML синтаксис JavaScript. Вы можете использовать\n" +
+    "                    React и без JSX, но JSX делает работу с React куда более элегантной. Как и XML, JSX теги имеют\n" +
+    "                    имена, атрибуты и потомков.\n" +
+    "                    Следующее, на что нужно обратить внимание, это то, что свойства разделяются запятой. Это так, потому\n" +
+    "                    что то, что мы передаем это по-факту объект. А так как это атрибут JavaScript, атрибуты пишутся\n" +
+    "                    горбатым регистром и не разделяются тире.\n" +
+    "                    Теперь, в коде выше, мы добавили несколько свойств элементам, которые мы стилизовали. Однако,\n" +
+    "                    представьте, если бы нам надо было добавить больше и больше стилей для элемента. И это тот момент,\n" +
+    "                    когда инлайновые стили косячат, так как не будут выглядеть чистыми."
 
 const HomePage = () => {
 
@@ -34,7 +44,9 @@ const HomePage = () => {
             <ImgMain/>
 
             <TitleMain/>
-            <AboutMe/>
+            <AboutMe
+                text={text}
+            />
             <MyFolio/>
             <News/>
             <InformQuestions/>

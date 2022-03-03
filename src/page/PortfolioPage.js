@@ -1,6 +1,6 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import {Carousel, Container} from "react-bootstrap";
 
 const PortfolioPage = () => {

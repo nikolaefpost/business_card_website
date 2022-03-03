@@ -1,7 +1,10 @@
 import React from 'react';
 import {Button, Col, Form, Row} from "react-bootstrap";
-import {ADD_CALLBACK} from "../gql/query";
+import {ADD_CALLBACK} from "../../../gql/query";
 import {useMutation} from "@apollo/client";
+import styles from "./CallBack.module.scss"
+import callback from "../../../assets/images/CallBack.png"
+
 
 
 const GetInTouch = () => {
@@ -14,7 +17,7 @@ const GetInTouch = () => {
 
     return (
         <div className='bg-dark text-center'>
-            <img className='' style={{marginTop: '10vh'}} src='GetInTouch.png'/>
+            <img className='' style={{marginTop: '10vh'}} src={callback}/>
             <Form className='mt-5' onSubmit={e => {
                       e.preventDefault();
 
@@ -73,7 +76,7 @@ const GetInTouch = () => {
                     </Form.Group>
                 </Row>
 
-                <Button variant="outline-secondary" type="submit" style={{borderColor: '#CD1BEA'}}>
+                <Button variant="outline-secondary" type="submit" className={styles.button_color}>
                     Жду звонка!
                 </Button>
             </Form>

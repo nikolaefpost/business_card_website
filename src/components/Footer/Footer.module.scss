@@ -1,0 +1,15 @@
+@import 'src/styles/colors';
+
+.a_white{
+  color: #8D8D8D;
+  text-decoration: none;
+  margin-right: 10px;
+
+  &:hover{
+    color: white;
+  }
+}
+
+.wraper{
+  background-color: $black;
+}

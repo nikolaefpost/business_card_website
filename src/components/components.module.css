@@ -57,21 +57,9 @@ P:first-letter {
     font-style: italic;
 }
 
-.folio_img{
-    background-repeat: no-repeat;
-    background-position: 50% 20%;
-    height: 30vh;
-    background-size: cover;
-}
 
-.a_white{
-    color: #8D8D8D;
-    text-decoration: none;
-    margin-right: 10px;
-}
-.a_white:hover{
-    color: white;
-}
+
+
 
 
 

@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import NavBar from "../components/NavBar";
-import ImgMain from "../components/ImgMain";
+import ImgMain from "../components/ImgMain/ImgMain";
 import TitleMain from "../components/TitleMain";
 import AboutMe from "../components/AboutMe/AboutMe";
-import MyFolio from "../components/MyFolio";
+import MyFolio from "../components/MyFolio/MyFolio";
 import News from "../components/News";
-import InformQuestions from "../components/inform&questions";
+import InformQuestions from "../components/InformQuestions/InformQuestions";
 import UpButton from "../components/Button/UpButton";
 import RingButton from "../components/Button/RingButton";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 
 const text = "JSX это препроцессорный шаг, который добавляет XML синтаксис JavaScript. Вы можете использовать\n" +
     "                    React и без JSX, но JSX делает работу с React куда более элегантной. Как и XML, JSX теги имеют\n" +
@@ -44,9 +44,7 @@ const HomePage = () => {
             <ImgMain/>
 
             <TitleMain/>
-            <AboutMe
-                text={text}
-            />
+            <AboutMe text={text}/>
             <MyFolio/>
             <News/>
             <InformQuestions/>

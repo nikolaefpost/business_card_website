@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import TitleAboutMe from "../components/TitleAboutMe";
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row} from "react-bootstrap";
 import ContactInfo from "./ContactInfo/ContactInfo";
-import GetInTouch from "./GetInTouch";
+import CallBack from "./CallBack/CallBack";
+import styles from "./InformQuestions.module.scss"
 
 const InformQuestions = () => {
     return (
@@ -14,7 +15,7 @@ const InformQuestions = () => {
                         <ContactInfo/>
                     </Col>
                     <Col xl={6} lg={12}>
-                        <GetInTouch/>
+                        <CallBack/>
                     </Col>
                 </Row>
             </Container>

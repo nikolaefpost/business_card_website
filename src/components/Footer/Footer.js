@@ -1,15 +1,17 @@
 import React from 'react';
 import {Col, Container, Image, Row} from "react-bootstrap";
-import styles from './components.module.css'
+import classNames from "classnames";
+import styles from './Footer.module.scss'
+import footer from '../../assets/images/FooterImg.png'
 
 const Footer = () => {
 
     return (
-        <div style={{backgroundColor: '#161616'}} className='pt-4'>
+        <div  className={classNames('pt-4', styles.wraper)}>
         <Container className='text-light' >
             <Row className='justify-content-between align-items-center border-bottom border-dark'>
                 <Col xl={6} sm={12} className='text-center'>
-                    <Image src="headerImg2.png" fluid/>
+                    <Image src={footer} fluid/>
                 </Col>
                 <Col  xl={2} sm={12} className='text-center mb-sm-3 mb-xl-0'>
                     <a  href="#top" className={styles.a_white}>
@@ -23,7 +25,7 @@ const Footer = () => {
             </Row>
             <Row className='justify-content-between align-items-center pt-3 pb-4 '>
                 <Col xl={6} sm={12} className='text-center mb-sm-2 mb-xl-0'>
-                    Ведущая Виктория Copyrirht © 2021 Pilot
+                    Ведущая Виктория Copyright © 2022 Pilot
                 </Col>
                 <Col  xl={2} sm={12} className='text-center'>
                     <i className="bi bi-facebook me-2"></i>

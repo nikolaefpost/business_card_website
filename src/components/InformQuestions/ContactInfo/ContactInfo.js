@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from "classnames";
 import styles from "./ContactInfo.module.scss"
-import title from "../../assets/images/ContactImg.png"
+import title from "../../../assets/images/ContactImg.png"
 
 const ContactInfo = () => {
     return (

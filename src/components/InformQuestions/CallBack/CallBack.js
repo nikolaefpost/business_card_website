@@ -2,8 +2,9 @@ import React from 'react';
 import {Button, Col, Form, Row} from "react-bootstrap";
 import {ADD_CALLBACK} from "../../../gql/query";
 import {useMutation} from "@apollo/client";
+import classNames from "classnames";
 import styles from "./CallBack.module.scss"
-import callback from "../../../assets/images/CallBack.png"
+import CallBackSvg from "../../../assets/images/CallBackSvg";
 
 
 
@@ -16,8 +17,9 @@ const GetInTouch = () => {
     if (error) return `Submission error! ${error.message}`;
 
     return (
-        <div className='bg-dark text-center'>
-            <img className='' style={{marginTop: '10vh'}} src={callback}/>
+        <div className={classNames('bg-dark text-center', styles.title)}>
+            {/*<img className='' style={{marginTop: '10vh'}} src={callback}/>*/}
+            <CallBackSvg/>
             <Form className='mt-5' onSubmit={e => {
                       e.preventDefault();
 

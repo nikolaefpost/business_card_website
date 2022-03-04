@@ -1,0 +1,21 @@
+@import 'src/styles/colors';
+
+.news_article{
+  color: $purple;
+}
+
+.news_border{
+  border-color: $purple !important;
+}
+
+p {
+  text-indent: 20px;
+  text-align: justify;
+
+  &:first-letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 200%;
+    color: $purple;
+    font-style: italic;
+  }
+}

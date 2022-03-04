@@ -1,0 +1,47 @@
+@import 'src/styles/colors';
+
+.divTitleMain{
+  width: 100%;
+  height: 66vh;
+  margin-top: 25vh;
+  padding-left: 5vw;
+
+
+}
+
+.imgTitleMain{
+  position: relative;
+  /*margin-left: 5vw;*/
+  max-width: 100%;
+  height: auto;
+  top: 60px;
+  left: 0;
+  animation: imgTitleMain 3s infinite ease-in-out;
+  animation-iteration-count: 1;
+
+  /*transform:scale(0.5);*/
+  /*transform:rotate(90deg);*/
+}
+
+@keyframes imgTitleMain  {
+  from {
+    transform:scale(0.5);
+    transform-origin: 100% 0%;
+  }
+  1%{
+    top: 60px;
+    left: 2400px;
+  }
+  50%{
+    transform:scale(1.5);
+    top: 60px;
+    left: 0;
+  }
+
+  to {
+    transform:scale(1);
+    transform-origin: 0% 100%;
+    top: 60px;
+    left: 0;
+  }
+}

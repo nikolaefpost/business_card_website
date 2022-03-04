@@ -12,6 +12,27 @@ export const GET_NEWS = gql`
 }
 `;
 
+export const GET_ABOUT_SHORT = gql`
+   query MyQuery {
+    queryAboutMe {
+        id
+        title_short
+    }
+}
+`;
+
+export const GET_ABOUT_PATH = gql`
+   query MyQuery {
+    queryAboutMe {
+        id
+        path1
+        path2
+        path3
+        path4
+    }
+}
+`;
+
 export const ADD_NEWS = gql`
     mutation AddNews($description: String!, $resource_link: String!, $image_src: String!, $title: String!) {
     addNews(input: {
@@ -37,4 +58,7 @@ export const ADD_CALLBACK = gql`
     }
 }
 `;
+
+
+
 

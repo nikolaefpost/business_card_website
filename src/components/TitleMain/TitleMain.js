@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image} from "react-bootstrap";
-import styles from './components.module.css'
+import styles from './TitleMain.module.scss'
 
 const TitleMain = () => {
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import {Button, Card, CardGroup, Col, Container, Image, Row} from "react-bootstrap";
 import {useQuery} from "@apollo/client";
-import {GET_NEWS} from "../gql/query";
+import {GET_NEWS} from "../../gql/query";
+import classNames from "classnames";
+import styles from "./News.module.scss"
+import title from "../../assets/images/newsTitle.png"
 
 const News = () => {
     const { loading, error, data } = useQuery(GET_NEWS);
@@ -12,8 +15,7 @@ const News = () => {
         <>
             <a name='news'></a>
             <div className='bg-dark text-center'>
-                {/*<img className='' style={{marginTop: '10vh'}} src='informImg.png'/>*/}
-                <Image src="informImg.png" style={{marginTop: '10vh'}} className='mx-md-2' fluid/>
+                <Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/>
                 <Container className='bg-dark text-light pb-5 mt-5'>
                     <Row>
                         {data.queryNews.map(item=>
@@ -21,7 +23,7 @@ const News = () => {
                                 <Card bg='dark' onClick={() => window.open(item.resource_link)}>
                                     <Card.Img variant="top" src={item.image_src}/>
                                     <Card.Body>
-                                        <Card.Title style={{color: '#CD1BEA'}}>{item.title}</Card.Title>
+                                        <Card.Title className={styles.news_article} >{item.title}</Card.Title>
                                         <Card.Text>{item.description}</Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -29,7 +31,8 @@ const News = () => {
                         )}
                     </Row>
                 </Container>
-                <Button variant='outline-secondary' style={{borderColor: '#CD1BEA'}} className='col-sm-3 col-lg-2 fw-bold my-sm-3'>ещё</Button>
+                <Button variant='outline-secondary'
+                    className={classNames('col-sm-3 col-lg-2 fw-bold my-sm-3', styles.news_border)}>ещё</Button>
             </div>
         </>
     );

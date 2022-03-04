@@ -10,29 +10,21 @@ import img3 from '../../assets/folio/myFolio3.jpg'
 import img4 from '../../assets/folio/myFolio4.jpg'
 import img5 from '../../assets/folio/myFolio5.jpg'
 import img6 from '../../assets/folio/myFolio6.jpg'
-import {Modal_} from "../index";
+import {Modal} from "../index";
 
-const imeges = [img1, img2, img3, img4, img5, img6]
+
+export const images = [img1, img2, img3, img4, img5, img6]
 
 const MyFolio = () => {
 
     const history = useHistory();
     const [show_img, setShow_img] = useState(null);
-    const [urlImg, setUrlImg] = useState();
-    
-    function handleClick(e) {
-        setShow_img(!show_img);
-        console.log(e?.target.style.backgroundImage)
-        setUrlImg(e?.target.style.backgroundImage)
-    }
-
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = (i) => {
         setShow(true)
-        setShow_img(imeges[i])
+        setShow_img(images[i])
     };
     return (
         <>
@@ -61,7 +53,7 @@ const MyFolio = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Modal_ show={show} handleClose={handleClose}><Image src={show_img} className={styles.modal_img}/></Modal_>
+                <Modal show={show} handleClose={handleClose}><Image src={show_img} className={styles.modal_img}/></Modal>
 
                 <Button variant='outline-secondary'  className={classNames('col-sm-3 col-lg-2 fw-bold my-sm-3', styles.folio_border)}
                         onClick={() => {

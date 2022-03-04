@@ -1,7 +1,13 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import {Carousel, Container} from "react-bootstrap";
+import img1 from "../assets/folio/myFolio1.jpg"
+import img2 from "../assets/folio/myFolio2.jpg"
+import img3 from "../assets/folio/myFolio3.jpg"
+import img4 from "../assets/folio/myFolio4.jpg"
+import img5 from "../assets/folio/myFolio5.jpg"
+import img6 from "../assets/folio/myFolio6.jpg"
 
 const PortfolioPage = () => {
 
@@ -12,11 +18,7 @@ const PortfolioPage = () => {
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
 
-    console.log(navbarHeight, footerHeight, contentHeight)
-
-
     useLayoutEffect(() => {
-        console.log(navbarRef.current)
         if (navbarRef.current) {
             setNavbarHeight(navbarRef.current.offsetHeight);
         }
@@ -32,15 +34,8 @@ const PortfolioPage = () => {
         setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-footerHeight))
     },[navbarHeight, footerHeight, document.documentElement.clientHeight])
 
-    // let contentHeight;
-    // if(navbarHeight&&footerHeight){
-    //     contentHeight = document.documentElement.clientHeight - navbarHeight-footerHeight-80;
-    //     console.log(document.documentElement.clientHeight)
-    // }
 
-
-    const numbers = ["folio/myFolio1.jpg", "folio/myFolio2.jpg", "folio/myFolio3.jpg", "folio/myFolio4.jpg",
-        "folio/myFolio5.jpg"];
+    const numbers = [img1, img2, img3, img4, img5, img6];
     return (
         <div className='bg-dark'>
             <div ref={navbarRef}>

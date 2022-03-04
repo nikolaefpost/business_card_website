@@ -1,18 +1,19 @@
 import React from 'react';
-
-import {Container, Image, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Image, Nav, Navbar} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
-import {HOME_ROUTE, PORTFOLIO_ROUTE} from "../utils/consts";
+import {HOME_ROUTE, PORTFOLIO_ROUTE} from "../../utils/consts";
+import styles from "./NavBar.module.scss"
+import login from "../../assets/images/navbarLogo.png"
 
-const NavBar = (props) => {
+const NavBar = () => {
     const history = useHistory();
     return (
         <>
             <a name='top'></a>
-            <Navbar style={{backgroundColor: '#F9F4F1'}} expand="xl">
+            <Navbar className={styles.wraper} expand="xl">
                 <Container bg="dark">
                     <Navbar.Brand href=""  onClick={() => {history.push(HOME_ROUTE)}}>
-                        <Image src="headerImg1.png" fluid/>
+                        <Image src={login} fluid/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">

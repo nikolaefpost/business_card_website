@@ -35,7 +35,7 @@ const PortfolioPage = () => {
     },[navbarHeight, footerHeight, document.documentElement.clientHeight])
 
 
-    const numbers = [img1, img2, img3, img4, img5, img6];
+    const folio = [img1, img2, img3, img4, img5, img6];
     return (
         <div className='bg-dark'>
             <div ref={navbarRef}>
@@ -43,20 +43,19 @@ const PortfolioPage = () => {
             </div>
 
             <Container style={{height: contentHeight? contentHeight: 'auto', overflow: "hidden"}} className='d-flex flex-column justify-content-center'>
-                <Carousel fade nextLabel='' prevLabel='' className='my-auto'>
-                    {numbers.map((number) =>
+                <Carousel fade nextLabel='' prevLabel='' className='my-auto' >
+                    {folio.map((number) =>
                         <Carousel.Item key={number.toString()}>
                             <img
-                                className="d-block w-100"
+                                className="d-block w-auto"
                                 src={number}
                                 alt="First slide"
+                                height={contentHeight}
                             />
 
                         </Carousel.Item>)}
                 </Carousel>
             </Container>
-
-
             <div ref={footerRef}>
                 <Footer/>
             </div>

@@ -5,9 +5,11 @@ import {Col, Container, Image, Row} from "react-bootstrap";
 import {TitleAboutMe} from "../components";
 import {useQuery} from "@apollo/client";
 import {GET_ABOUT_PATH} from "../gql/query";
+import {about1, about2, about3, about4, about5, about6} from "../assets/aboutMe"
 
 
 const AboutMeMore = () => {
+    const aboutImg =[about1, about2, about3, about4, about5, about6]
     const {loading, error, data} = useQuery(GET_ABOUT_PATH);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
@@ -19,7 +21,7 @@ const AboutMeMore = () => {
                 <Container className='py-4'>
                     <Row className='align-items-center mb-3'>
                         <Col className='text-center pb-3' sm={12} lg={4} xl={2}>
-                            <Image src="aboutMe1.JPG" fluid/>
+                            <Image src={aboutImg[0]} fluid/>
                         </Col>
                         <Col sm={12} lg={8} xl={10}>
                             <p>
@@ -34,13 +36,13 @@ const AboutMeMore = () => {
                             </p>
                         </Col>
                         <Col className='text-center' sm={12} lg={4} xl={2}>
-                            <Image src="aboutMe2.JPG" fluid/>
+                            <Image src={aboutImg[1]} fluid/>
                         </Col>
                     </Row>
                     <Row className='align-items-center mb-3'>
                         <Col className='text-center' sm={12} lg={4} xl={2}>
 
-                            <Image src="aboutMe3.JPG" fluid/>
+                            <Image src={aboutImg[2]} fluid/>
                         </Col>
                         <Col sm={12} lg={8} xl={10}>
                             <p>
@@ -50,13 +52,13 @@ const AboutMeMore = () => {
                     </Row>
                     <Row className='align-items-center mb-3'>
                         <Col className='text-center' sm={12} lg={3}>
-                            <Image src="aboutMe6.JPG" fluid/>
+                            <Image src={aboutImg[3]} fluid/>
                         </Col>
                         <Col sm={12} lg={6}>
-                            <Image src="aboutMe5.JPG" fluid/>
+                            <Image src={aboutImg[4]} fluid/>
                         </Col>
                         <Col className='text-center' sm={12} lg={3}>
-                            <Image style={{width: '100%'}} src="BBp0M5nytI4.jpg"/>
+                            <Image style={{width: '100%'}} src={aboutImg[5]}/>
                         </Col>
                     </Row>
                     <p>

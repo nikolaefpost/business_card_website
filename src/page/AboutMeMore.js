@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import {Col, Container, Image, Row} from "react-bootstrap";
@@ -9,6 +9,12 @@ import {about1, about2, about3, about4, about5, about6} from "../assets/aboutMe"
 
 
 const AboutMeMore = () => {
+
+    useEffect(()=>{
+        const elTop = document.querySelector('body');
+        console.log(elTop.scrollTop)
+        elTop.scrollTop = 0;
+    },[])
     const aboutImg =[about1, about2, about3, about4, about5, about6]
     const {loading, error, data} = useQuery(GET_ABOUT_PATH);
     if (loading) return <p>Loading...</p>;
@@ -17,7 +23,7 @@ const AboutMeMore = () => {
         <div>
             <NavBar/>
             <TitleAboutMe/>
-            <div className='bg-dark text-light '>
+            <div className='bg-dark text-light ' id="scrolledBlock">
                 <Container className='py-4'>
                     <Row className='align-items-center mb-3'>
                         <Col className='text-center pb-3' sm={12} lg={4} xl={2}>

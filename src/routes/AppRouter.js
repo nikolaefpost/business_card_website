@@ -1,16 +1,18 @@
 import React from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../routes";
 import {HOME_ROUTE} from "../utils/consts";
 
 const AppRouter = () => {
     return (
-        <Switch>
+        <Routes>
             {routes.map(({path, Component})=>
-                <Route key={path} path={path} component={Component} exact />
+                <Route key={path} path={path} element={<Component/>} />
             )}
-            <Redirect to={HOME_ROUTE}/>
-        </Switch>
+            {/*<Redirect to={HOME_ROUTE}/>*/}
+            <Route path='*' element={<Navigate to={HOME_ROUTE}/>}/>
+        </Routes>
+
     );
 };
 

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
+import {MainButton} from "../Button";
 import styles from './MyFolio.module.scss'
 import { PORTFOLIO_ROUTE} from "../../utils/consts";
-import {useHistory} from "react-router-dom";
 import classNames from "classnames";
 import img1 from '../../assets/folio/myFolio1.jpg'
 import img2 from '../../assets/folio/myFolio2.jpg'
@@ -10,14 +10,13 @@ import img3 from '../../assets/folio/myFolio3.jpg'
 import img4 from '../../assets/folio/myFolio4.jpg'
 import img5 from '../../assets/folio/myFolio5.jpg'
 import img6 from '../../assets/folio/myFolio6.jpg'
-import {Modal} from "../index";
+import {Modal} from "../";
 
 
 export const images = [img1, img2, img3, img4, img5, img6]
 
 const MyFolio = () => {
 
-    const history = useHistory();
     const [show_img, setShow_img] = useState(null);
     const [show, setShow] = useState(false);
 
@@ -29,7 +28,7 @@ const MyFolio = () => {
     return (
         <>
             <a name='folio'></a>
-            <div className={classNames('bg-dark text-center', styles.folio_title)}>
+            <div className={classNames('bg-dark text-center pb-2', styles.folio_title)}>
 
                 <Container className='bg-dark text-light pb-5'>
                     <Row>
@@ -55,11 +54,7 @@ const MyFolio = () => {
                 </Container>
                 <Modal show={show} handleClose={handleClose}><Image src={show_img} className={styles.modal_img}/></Modal>
 
-                <Button variant='outline-secondary'  className={classNames('col-sm-3 col-lg-2 fw-bold my-sm-3', styles.folio_border)}
-                        onClick={() => {
-
-                            history.push(PORTFOLIO_ROUTE)
-                        }}>ещё</Button>
+               <MainButton path={PORTFOLIO_ROUTE}/>
             </div>
         </>
     );

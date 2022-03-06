@@ -50,7 +50,7 @@ const PortfolioPage = () => {
                                 className="d-block w-auto"
                                 src={number}
                                 alt="First slide"
-                                height={contentHeight}
+                                height={Number(contentHeight)? Number(contentHeight): 'auto'}
                             />
 
                         </Carousel.Item>)}

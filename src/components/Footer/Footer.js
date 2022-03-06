@@ -3,6 +3,9 @@ import {Col, Container, Image, Row} from "react-bootstrap";
 import classNames from "classnames";
 import styles from './Footer.module.scss'
 import footer from '../../assets/images/FooterImg.png'
+import {FACEBOOK, HOME_ROUTE, INSTA} from "../../utils/consts";
+import login from "../../assets/images/navbarLogo.png";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
 
@@ -11,15 +14,11 @@ const Footer = () => {
         <Container className='text-light' >
             <Row className='justify-content-between align-items-center border-bottom border-dark'>
                 <Col xl={6} sm={12} className='text-center'>
-                    <Image src={footer} fluid/>
+                    <Link href="" to={HOME_ROUTE}><Image src={footer} fluid/></Link>
                 </Col>
                 <Col  xl={2} sm={12} className='text-center mb-sm-3 mb-xl-0'>
-                    <a  href="#top" className={styles.a_white}>
-                       Домой
-                    </a>
-                    <a  href="#top" className={styles.a_white}>
-                        Новости
-                    </a>
+                    <Link href="#top" to={HOME_ROUTE} className={styles.a_white}>Домой</Link>
+                    <Link href="" to={HOME_ROUTE} className={styles.a_white}>Новости</Link>
                 </Col>
 
             </Row>
@@ -28,9 +27,9 @@ const Footer = () => {
                     Ведущая Виктория Copyright © 2022 Pilot
                 </Col>
                 <Col  xl={2} sm={12} className='text-center'>
-                    <i className="bi bi-facebook me-2"></i>
-                    <i className="bi bi-twitter me-2"></i>
-                    <i className="bi bi-instagram "></i>
+                    <i className="bi bi-facebook me-2" onClick={() => window.open(FACEBOOK)}></i>
+                    <i className="bi bi-twitter me-2" onClick={() => window.open(INSTA)}></i>
+                    <i className="bi bi-instagram " onClick={() => window.open(INSTA)}></i>
                 </Col>
 
             </Row>

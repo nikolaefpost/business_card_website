@@ -1,0 +1,15 @@
+
+
+@mixin fonts($font-weight, $font-size, $line-height, $color) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin transition($property...) {
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}

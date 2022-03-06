@@ -1,10 +1,12 @@
 import React from 'react';
-import {Button, Card, CardGroup, Col, Container, Image, Row} from "react-bootstrap";
+import {Card, Col, Container, Image, Row} from "react-bootstrap";
 import {useQuery} from "@apollo/client";
 import {GET_NEWS} from "../../gql/query";
 import classNames from "classnames";
 import styles from "./News.module.scss"
 import title from "../../assets/images/newsTitle.png"
+import {MainButton} from "../Button";
+import {HOME_ROUTE, ME_ROUTE} from "../../utils/consts";
 
 const News = () => {
     const { loading, error, data } = useQuery(GET_NEWS);
@@ -14,9 +16,9 @@ const News = () => {
     return (
         <>
             <a name='news'></a>
-            <div className='bg-dark text-center'>
+            <div className='bg-dark text-center pb-2'>
                 <Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/>
-                <Container className='bg-dark text-light pb-5 mt-5'>
+                <Container className='bg-dark text-light pb-5 mt-5 mb-1'>
                     <Row>
                         {data.queryNews.map(item=>
                             <Col key={item.id} xl={4} lg={12} className='mb-md-3 mb-xl-0'>
@@ -31,8 +33,7 @@ const News = () => {
                         )}
                     </Row>
                 </Container>
-                <Button variant='outline-secondary'
-                    className={classNames('col-sm-3 col-lg-2 fw-bold my-sm-3', styles.news_border)}>ещё</Button>
+                <MainButton path={ME_ROUTE}/>
             </div>
         </>
     );

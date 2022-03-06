@@ -1,4 +1,20 @@
 @import 'src/styles/colors';
+@import 'src/styles/mixins';
+
+.link_style{
+  color: $grey;
+  text-decoration: none;
+  border: 1px solid $purple;
+  border-radius: 6px;
+  padding: 6px 64px;
+  font-weight: 700;
+  @include transition(color .5s ease-out);
+
+  &:hover{
+    color: $white;
+    background-color: $grey;
+  }
+}
 
 .up_style_main {
   position: fixed;

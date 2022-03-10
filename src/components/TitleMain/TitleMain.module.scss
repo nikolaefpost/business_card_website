@@ -6,7 +6,6 @@
   margin-top: 25vh;
   padding-left: 5vw;
 
-
 }
 
 .imgTitleMain{
@@ -43,5 +42,18 @@
     transform-origin: 0% 100%;
     top: 60px;
     left: 0;
+  }
+}
+
+@media(max-width: 600px) {
+  .divTitleMain{
+    background-size: 50% auto;
+
+  }
+  .imgTitleMain{
+    background-color: white;
+    border-radius: 25% 10%;
+    padding: 0 5vw;
+    opacity: .7;
   }
 }

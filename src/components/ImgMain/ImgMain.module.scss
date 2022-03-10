@@ -10,3 +10,9 @@
   height: 93%;
   position: absolute;
 }
+
+@media(max-width: 600px) {
+  .mainBackground{
+    background-position: 50% 75%;
+  }
+}

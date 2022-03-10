@@ -8,3 +8,22 @@
   color: $grey;
   text-decoration: none;
 }
+
+.logo{
+  width: 100%;
+}
+
+.wraper_logo{
+  flex-wrap: nowrap;
+}
+
+
+
+@media(max-width: 600px) {
+  //.logo{
+  //  width: 50%;
+  //}
+  .wraper_logo{
+    flex-wrap: nowrap;
+  }
+}

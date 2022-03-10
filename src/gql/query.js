@@ -32,7 +32,6 @@ export const GET_ABOUT_PATH = gql`
     }
 }
 `;
-
 export const ADD_NEWS = gql`
     mutation AddNews($description: String!, $resource_link: String!, $image_src: String!, $title: String!) {
     addNews(input: {

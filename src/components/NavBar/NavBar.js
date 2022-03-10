@@ -11,9 +11,9 @@ const NavBar = () => {
         <>
             <a name='top'></a>
             <Navbar className={styles.wraper} expand="xl">
-                <Container bg="dark">
+                <Container bg="dark" className={styles.wraper_logo}>
                     <Navbar.Brand href="">
-                        <Link href="" to={HOME_ROUTE}><Image src={login} fluid/></Link>
+                        <Link href="" to={HOME_ROUTE}><Image src={login} className={styles.logo}/></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">

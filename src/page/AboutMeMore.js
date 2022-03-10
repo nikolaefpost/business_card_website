@@ -1,20 +1,20 @@
 import React, {useEffect} from 'react';
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import {TitleAboutMe} from "../components";
 import {useQuery} from "@apollo/client";
 import {GET_ABOUT_PATH} from "../gql/query";
 import {about1, about2, about3, about4, about5, about6} from "../assets/aboutMe"
 
 
+import styled, { keyframes } from 'styled-components';
+import { zoomIn } from 'react-animations';
+const ZoomIn = styled.div`animation: 2s ${keyframes`${zoomIn}`} 1`;
+
+
 const AboutMeMore = () => {
 
-    useEffect(()=>{
-        const elTop = document.querySelector('body');
-        console.log(elTop.scrollTop)
-        elTop.scrollTop = 0;
-    },[])
     const aboutImg =[about1, about2, about3, about4, about5, about6]
     const {loading, error, data} = useQuery(GET_ABOUT_PATH);
     if (loading) return <p>Loading...</p>;
@@ -23,7 +23,7 @@ const AboutMeMore = () => {
         <div>
             <NavBar/>
             <TitleAboutMe/>
-            <div className='bg-dark text-light ' id="scrolledBlock">
+            <div className='bg-dark text-light'>
                 <Container className='py-4'>
                     <Row className='align-items-center mb-3'>
                         <Col className='text-center pb-3' sm={12} lg={4} xl={2}>
@@ -61,7 +61,8 @@ const AboutMeMore = () => {
                             <Image src={aboutImg[3]} fluid/>
                         </Col>
                         <Col sm={12} lg={6}>
-                            <Image src={aboutImg[4]} fluid/>
+                            <ZoomIn><Image src={aboutImg[4]} fluid/></ZoomIn>
+
                         </Col>
                         <Col className='text-center' sm={12} lg={3}>
                             <Image style={{width: '100%'}} src={aboutImg[5]}/>

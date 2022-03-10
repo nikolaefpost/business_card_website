@@ -6,7 +6,11 @@ import classNames from "classnames";
 import styles from "./News.module.scss"
 import title from "../../assets/images/newsTitle.png"
 import {MainButton} from "../Button";
-import {HOME_ROUTE, ME_ROUTE} from "../../utils/consts";
+import { ME_ROUTE} from "../../utils/consts";
+
+import styled, { keyframes } from 'styled-components';
+import { bounce } from 'react-animations';
+const HeadShake = styled.div`animation: 6s ${keyframes`${bounce}`} 5`;
 
 const News = () => {
     const { loading, error, data } = useQuery(GET_NEWS);
@@ -17,7 +21,7 @@ const News = () => {
         <>
             <a name='news'></a>
             <div className='bg-dark text-center pb-2'>
-                <Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/>
+                <HeadShake><Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/></HeadShake>
                 <Container className='bg-dark text-light pb-5 mt-5 mb-1'>
                     <Row>
                         {data.queryNews.map(item=>

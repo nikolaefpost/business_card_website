@@ -19,6 +19,7 @@ const AboutMeMore = () => {
     const {loading, error, data} = useQuery(GET_ABOUT_PATH);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
+
     return (
         <div>
             <NavBar/>

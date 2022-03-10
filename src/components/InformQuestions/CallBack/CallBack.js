@@ -22,12 +22,20 @@ const GetInTouch = () => {
             <CallBackSvg/>
             <Form className='mt-5' onSubmit={e => {
                       e.preventDefault();
+                console.log({
+                    variables: {
+                        date: input_date.value,
+                        time: input_time.value,
+                        phone_number: input_phone.value,
+                        description: input_desc.value,
+                    }
+                })
 
                       addCallback({
                           variables: {
                               date: input_date.value,
                               time: input_time.value,
-                              phone_number: Number(input_phone.value),
+                              phone_number: input_phone.value,
                               description: input_desc.value,
                           }
                       });

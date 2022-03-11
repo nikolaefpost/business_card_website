@@ -9,7 +9,7 @@ import {MainButton} from "../Button";
 import { ME_ROUTE} from "../../utils/consts";
 
 import styled, { keyframes } from 'styled-components';
-import { bounce } from 'react-animations';
+import {bounce} from 'react-animations';
 const HeadShake = styled.div`animation: 6s ${keyframes`${bounce}`} 5`;
 
 const News = () => {

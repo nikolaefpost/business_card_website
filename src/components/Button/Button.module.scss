@@ -18,8 +18,8 @@
 
 .up_style_main {
   position: fixed;
-  bottom :30px;
-  left: 75%;
+  bottom :35px;
+  left: 72%;
   zIndex: 1;
 }
 
@@ -309,5 +309,11 @@
   100% {
     transform: rotate(0deg) scale(0.7) skew(1deg);
     opacity: .2;
+  }
+}
+
+@media(max-width: 600px) {
+  .up_style_main {
+    left: 68%;
   }
 }

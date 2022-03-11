@@ -18,7 +18,7 @@
 
 .up_style_main {
   position: fixed;
-  bottom :35px;
+  bottom : 40px;
   left: 72%;
   zIndex: 1;
 }
@@ -314,6 +314,6 @@
 
 @media(max-width: 600px) {
   .up_style_main {
-    left: 68%;
+    left: 65%;
   }
 }

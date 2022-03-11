@@ -18,8 +18,8 @@
 
 .up_style_main {
   position: fixed;
-  bottom : 40px;
-  left: 72%;
+  bottom : 35px;
+  left: 83%;
   zIndex: 1;
 }
 
@@ -34,7 +34,7 @@
 
 #popup__toggle {
   bottom: 25px;
-  right: 70%;
+  right: 80.5%;
   position: fixed;
   z-index: 999
 }
@@ -314,6 +314,9 @@
 
 @media(max-width: 600px) {
   .up_style_main {
-    left: 65%;
+    left: 66%;
+  }
+  #popup__toggle {
+    right: 68%;
   }
 }

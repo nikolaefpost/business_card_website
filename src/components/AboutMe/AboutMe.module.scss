@@ -4,3 +4,12 @@
 .button{
   border-color: $purple !important;
 }
+.about_img{
+  margin-top: 10vh;
+}
+
+@media(max-width: 600px) {
+  .about_img{
+    margin-top: 2vh;
+  }
+}

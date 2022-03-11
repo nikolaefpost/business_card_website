@@ -20,7 +20,13 @@
 .modal_img{
   width: auto;
   height: 100%;
-  //object-fit: cover;
   margin: 0 auto;
   display: block ;
+}
+
+@media(max-width: 600px) {
+  .folio_title{
+    background-position: 5vh 0px;
+    background-size: 50% auto;
+  }
 }

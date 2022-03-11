@@ -30,7 +30,7 @@ const MyFolio = () => {
             <a name='folio'></a>
             <div className={classNames('bg-dark text-center pb-2', styles.folio_title)}>
 
-                <Container className='bg-dark text-light pb-5'>
+                <Container className='bg-dark text-light pb-2 p-md-5'>
                     <Row>
                         <Col xl={5} lg={12} className='mb-4' onClick={()=>handleShow(0)}>
                             <Image src={img1 } className={styles.folio_img} />

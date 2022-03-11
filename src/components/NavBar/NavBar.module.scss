@@ -13,17 +13,26 @@
   width: 100%;
 }
 
-.wraper_logo{
-  flex-wrap: nowrap !important;
+.wraper_container{
 }
 
-
+.social{
+  border-left: solid 1px black;
+  padding-left: 1rem
+}
 
 @media(max-width: 600px) {
-  //.logo{
-  //  width: 50%;
-  //}
-  .wraper_logo{
-    flex-wrap: nowrap;
+  .wraper_container{
+    width: 70vw;
+  }
+  .social{
+    border-left: none;
+    padding-left: 0
+  }
+}
+
+@media(max-width: 330px) {
+  .wraper_container{
+    width: 60vw;
   }
 }

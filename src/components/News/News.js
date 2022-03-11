@@ -22,7 +22,7 @@ const News = () => {
             <a name='news'></a>
             <div className='bg-dark text-center pb-2'>
                 <HeadShake><Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/></HeadShake>
-                <Container className='bg-dark text-light pb-5 mt-5 mb-1'>
+                <Container className='bg-dark text-light pb-2 p-md-5 mt-5 mb-1'>
                     <Row>
                         {data.queryNews.map(item=>
                             <Col key={item.id} xl={4} lg={12} className='mb-md-3 mb-xl-0'>

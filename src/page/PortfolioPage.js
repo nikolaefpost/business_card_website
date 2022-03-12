@@ -70,10 +70,11 @@ const PortfolioPage = () => {
                                 height={Number(contentHeight) ? Number(contentHeight) : 'auto'}
                                 />:
                                 <img
-                                    className="d-block h-auto"
+                                    className="d-block"
                                     src={number}
                                     alt="First slide"
                                     width={screenWidth}
+                                    height='auto'
                                 />
                             }
 

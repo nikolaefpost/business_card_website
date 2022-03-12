@@ -2,6 +2,7 @@ import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import {Carousel, Container} from "react-bootstrap";
+import styles from "./home.module.css"
 import img1 from "../assets/folio/myFolio1.jpg"
 import img2 from "../assets/folio/myFolio2.jpg"
 import img3 from "../assets/folio/myFolio3.jpg"

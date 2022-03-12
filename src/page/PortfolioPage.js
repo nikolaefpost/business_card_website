@@ -74,6 +74,7 @@ const PortfolioPage = () => {
                                     alt="First slide"
                                     width={(screenWidth > 600) ? screenWidth*0.9 : screenWidth}
                                     height='auto'
+                                    style={{objectFit: 'cover'}}
                                 />
                             }
 

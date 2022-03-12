@@ -72,9 +72,9 @@ const PortfolioPage = () => {
                                     className="d-block"
                                     src={number}
                                     alt="First slide"
-                                    width={(screenWidth > 600) ? screenWidth*0.9 : screenWidth}
+                                    width={(screenWidth > 600) ? screenWidth*0.8 : screenWidth}
                                     height='auto'
-                                    style={{objectFit: 'fill'}}
+                                    style={{objectFit: 'cover'}}
                                 />
                             }
 

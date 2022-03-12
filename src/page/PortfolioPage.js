@@ -50,13 +50,20 @@ const PortfolioPage = () => {
                 <Carousel fade nextLabel='' prevLabel='' className='my-auto' >
                     {folio.map((number) =>
                         <Carousel.Item key={number.toString()}>
-                            <img
+                            {(screenWidth > 600) ?
+                                <img
                                 className="d-block"
                                 src={number}
                                 alt="First slide"
-                                // sizes="(max-width: 600px) 280px, 300px"
-                                height={(screenWidth>600) ? Number(contentHeight)? Number(contentHeight): 'auto' : '200px'}
-                            />
+                                height={Number(contentHeight) ? Number(contentHeight) : 'auto'}
+                                />:
+                                <img
+                                    className="d-block"
+                                    src={number}
+                                    alt="First slide"
+                                    width={screenWidth}
+                                />
+                            }
 
                         </Carousel.Item>)}
                 </Carousel>

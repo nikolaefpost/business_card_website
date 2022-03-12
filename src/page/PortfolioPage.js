@@ -21,12 +21,11 @@ const PortfolioPage = () => {
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
-    const [screenWidth, setScreenWidth] = useState(window.screen.availWidth)
+    const [screenWidth, setScreenWidth] = useState(window.screen.width)
     console.log(screenWidth)
 
     function addIngredientHandler(){
-        setScreenWidth(window.screen.availWidth)
-        console.log(window.screen.availWidth)
+        setScreenWidth(window.screen.width)
     }
 
     useLayoutEffect(() => {
@@ -73,7 +72,7 @@ const PortfolioPage = () => {
                                     className="d-block"
                                     src={number}
                                     alt="First slide"
-                                    width={screenWidth}
+                                    width={(screenWidth > 600) ? screenWidth*0.9 : screenWidth}
                                     height='auto'
                                 />
                             }

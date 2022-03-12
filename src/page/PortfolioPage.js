@@ -12,6 +12,9 @@ import img6 from "../assets/folio/myFolio6.jpg"
 
 const PortfolioPage = () => {
 
+    const screenWidth = window.screen.availWidth
+    console.log(screenWidth)
+
     const navbarRef = useRef();
     const footerRef = useRef();
 
@@ -48,17 +51,18 @@ const PortfolioPage = () => {
                     {folio.map((number) =>
                         <Carousel.Item key={number.toString()}>
                             <img
-                                className="d-block w-auto"
+                                className="d-block"
                                 src={number}
                                 alt="First slide"
-                                height={Number(contentHeight)? Number(contentHeight): 'auto'}
+                                // sizes="(max-width: 600px) 280px, 300px"
+                                height={(screenWidth>600) ? Number(contentHeight)? Number(contentHeight): 'auto' : '200px'}
                             />
 
                         </Carousel.Item>)}
                 </Carousel>
             </Container>
-            <div ref={footerRef}>
-                <Footer/>
+            <div ref={footerRef} style={{height: '200px'}}>
+                {/*<Footer/>*/}
             </div>
 
         </div>

@@ -1,17 +1,13 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
-import NavBar from "../components/NavBar/NavBar";
-import Footer from "../components/Footer/Footer";
-import {Carousel, Container} from "react-bootstrap";
-import styles from "./home.module.css"
+import styles from "./page.module.css"
 import img1 from "../assets/folio/myFolio1.jpg"
 import img2 from "../assets/folio/myFolio2.jpg"
 import img3 from "../assets/folio/myFolio3.jpg"
 import img4 from "../assets/folio/myFolio4.jpg"
 import img5 from "../assets/folio/myFolio5.jpg"
 import img6 from "../assets/folio/myFolio6.jpg"
-import PhotoViewScreen from "../components/PhotoView/PhotoViewScreen";
-import PhotoViewMobil from "../components/PhotoView/PhotoViewMobil";
-import {UpButton} from "../components";
+
+import {NavBar, PhotoViewMobil, PhotoViewScreen, UpButton} from "../components";
 
 const PortfolioPage = ({screenWidth, scrollPosition}) => {
     console.log(scrollPosition)
@@ -39,26 +35,25 @@ const PortfolioPage = ({screenWidth, scrollPosition}) => {
 
 
     useEffect(()=>{
-        setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-footerHeight))
+        setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-50))
     },[navbarHeight, footerHeight, document.documentElement.clientHeight])
 
 
     const folio = [img1, img2, img3, img4, img5, img6];
     return (
         <div className='bg-dark'>
-            {/*{(screenWidth > 1000) && <div ref={navbarRef}>*/}
-            {/*    <NavBar/>*/}
-            {/*</div>}*/}
-            <NavBar/>
+            <div ref={navbarRef}>
+                <NavBar/>
+            </div>
             {(screenWidth > 1000) ? <PhotoViewScreen screenWidth={screenWidth} contentHeight={contentHeight} folio={folio}/>:
                 <PhotoViewMobil folio={folio}/>
             }
 
-            {(screenWidth > 1000) && <div ref={footerRef}
-                  style={{height: '200px'}}
-            >
-                {/*<Footer/>*/}
-            </div>}
+            {/*{(screenWidth > 1000) && <div ref={footerRef}*/}
+            {/*      style={{height: '200px'}}*/}
+            {/*>*/}
+            {/*    /!*<Footer/>*!/*/}
+            {/*</div>}*/}
             {scrollPosition>80&&<UpButton/>}
 
         </div>

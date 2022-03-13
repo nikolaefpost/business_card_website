@@ -11,3 +11,4 @@ export {default as TitleAboutMe} from "./TitleAboutMe/TitleAboutMe"
 export {default as TitleMain} from "./TitleMain/TitleMain"
 
 export * from "./Button";
+export * from "./PhotoView";

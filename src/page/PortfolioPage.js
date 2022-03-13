@@ -11,8 +11,10 @@ import img5 from "../assets/folio/myFolio5.jpg"
 import img6 from "../assets/folio/myFolio6.jpg"
 import PhotoViewScreen from "../components/PhotoView/PhotoViewScreen";
 import PhotoViewMobil from "../components/PhotoView/PhotoViewMobil";
+import {UpButton} from "../components";
 
-const PortfolioPage = ({screenWidth}) => {
+const PortfolioPage = ({screenWidth, scrollPosition}) => {
+    console.log(scrollPosition)
 
     const navbarRef = useRef();
     const footerRef = useRef();
@@ -20,7 +22,7 @@ const PortfolioPage = ({screenWidth}) => {
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
-    console.log(screenWidth)
+    // console.log(screenWidth)
 
 
     useLayoutEffect(() => {
@@ -57,6 +59,7 @@ const PortfolioPage = ({screenWidth}) => {
             >
                 {/*<Footer/>*/}
             </div>}
+            {scrollPosition>80&&<UpButton/>}
 
         </div>
     );

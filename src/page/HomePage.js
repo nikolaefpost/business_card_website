@@ -16,23 +16,23 @@ import {useQuery} from "@apollo/client";
 import {GET_ABOUT_SHORT} from "../gql/query";
 
 
-const HomePage = ({screenWidth}) => {
-    const [scrollPosition, setScrollPosition] = useState(0);
+const HomePage = ({screenWidth, scrollPosition}) => {
+    // const [scrollPosition, setScrollPosition] = useState(0);
 
 
 
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    };
+    // const handleScroll = () => {
+    //     const position = window.pageYOffset;
+    //     setScrollPosition(position);
+    // };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     const { loading, error, data } = useQuery(GET_ABOUT_SHORT);
     if (loading) return <p>Loading...</p>;
@@ -44,7 +44,7 @@ const HomePage = ({screenWidth}) => {
             <ImgMain/>
             <TitleMain/>
             <AboutMe text={(data.queryAboutMe)[0].title_short}/>
-            <MyFolio/>
+            <MyFolio screenWidth={screenWidth} />
             <News screenWidth={screenWidth} />
             <InformQuestions screenWidth={screenWidth} />
             <Footer/>

@@ -9,11 +9,10 @@ import img3 from "../assets/folio/myFolio3.jpg"
 import img4 from "../assets/folio/myFolio4.jpg"
 import img5 from "../assets/folio/myFolio5.jpg"
 import img6 from "../assets/folio/myFolio6.jpg"
+import PhotoViewScreen from "../components/PhotoView/PhotoViewScreen";
+import PhotoViewMobil from "../components/PhotoView/PhotoViewMobil";
 
 const PortfolioPage = ({screenWidth}) => {
-
-    // const screenWidth = window.screen.availWidth
-
 
     const navbarRef = useRef();
     const footerRef = useRef();
@@ -21,12 +20,8 @@ const PortfolioPage = ({screenWidth}) => {
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
-    // const [screenWidth, setScreenWidth] = useState(window.screen.width)
     console.log(screenWidth)
 
-    // function addIngredientHandler(){
-    //     setScreenWidth(window.screen.width)
-    // }
 
     useLayoutEffect(() => {
         if (navbarRef.current) {
@@ -40,10 +35,6 @@ const PortfolioPage = ({screenWidth}) => {
         }
     }, []);
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', addIngredientHandler, false);
-    //     return () => window.removeEventListener('resize',addIngredientHandler)
-    // }, []);
 
     useEffect(()=>{
         setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-footerHeight))
@@ -53,34 +44,14 @@ const PortfolioPage = ({screenWidth}) => {
     const folio = [img1, img2, img3, img4, img5, img6];
     return (
         <div className='bg-dark'>
-            {(screenWidth > 1000) && <div ref={navbarRef}>
-                <NavBar/>
-            </div>}
+            {/*{(screenWidth > 1000) && <div ref={navbarRef}>*/}
+            {/*    <NavBar/>*/}
+            {/*</div>}*/}
+            <NavBar/>
+            {(screenWidth > 1000) ? <PhotoViewScreen screenWidth={screenWidth} contentHeight={contentHeight} folio={folio}/>:
+                <PhotoViewMobil folio={folio}/>
+            }
 
-            <Container style={{height: contentHeight? contentHeight: 'auto', overflow: "hidden"}} className='d-flex flex-column justify-content-center'>
-                <Carousel fade nextLabel='' prevLabel='' className='my-auto' >
-                    {folio.map((number) =>
-                        <Carousel.Item key={number.toString()}>
-                            {(screenWidth > 1000) ?
-                                <img
-                                className="d-block w-auto"
-                                src={number}
-                                alt="First slide"
-                                height={Number(contentHeight) ? Number(contentHeight) : 'auto'}
-                                />:
-                                <img
-                                    className="d-block"
-                                    src={number}
-                                    alt="First slide"
-                                    width={(screenWidth > 600) ? screenWidth*0.8 : screenWidth}
-                                    height='auto'
-                                    style={{objectFit: 'cover'}}
-                                />
-                            }
-
-                        </Carousel.Item>)}
-                </Carousel>
-            </Container>
             {(screenWidth > 1000) && <div ref={footerRef}
                   style={{height: '200px'}}
             >

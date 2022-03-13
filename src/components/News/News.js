@@ -10,9 +10,10 @@ import { ME_ROUTE} from "../../utils/consts";
 
 import styled, { keyframes } from 'styled-components';
 import {bounce} from 'react-animations';
+import NewsTitle from "../../assets/images/NewsTitle";
 const HeadShake = styled.div`animation: 6s ${keyframes`${bounce}`} 5`;
 
-const News = () => {
+const News = ({screenWidth}) => {
     const { loading, error, data } = useQuery(GET_NEWS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
@@ -20,8 +21,11 @@ const News = () => {
     return (
         <>
             <a name='news'></a>
-            <div className='bg-dark text-center pb-2'>
-                <HeadShake><Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/></HeadShake>
+            <div className={classNames('bg-dark text-center pb-2', styles.title)}>
+                <HeadShake>
+                    {/*<Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/>*/}
+                    <NewsTitle width={(screenWidth > 600)? '518' : '359'}/>
+                </HeadShake>
                 <Container className='bg-dark text-light pb-2 p-md-5 mt-5 mb-1'>
                     <Row>
                         {data.queryNews.map(item=>

@@ -8,7 +8,7 @@ import CallBackSvg from "../../../assets/images/CallBackSvg";
 
 
 
-const GetInTouch = () => {
+const GetInTouch = ({screenWidth}) => {
     let input_date, input_time, input_phone, input_desc;
 
     const [addCallback, {data, loading, error}] = useMutation(ADD_CALLBACK);
@@ -17,20 +17,11 @@ const GetInTouch = () => {
     if (error) return `Submission error! ${error.message}`;
 
     return (
-        <div className={classNames('bg-dark text-center', styles.title)}>
+        <div className={classNames('bg-dark text-center px-2 px-md-0', styles.title)}>
             {/*<img className='' style={{marginTop: '10vh'}} src={callback}/>*/}
-            <CallBackSvg/>
-            <Form className='mt-5' onSubmit={e => {
+            <CallBackSvg width={(screenWidth > 600)? '433' : '300'} />
+            <Form className='mt-2 mt-sm-5 px-2 px-sm-0' onSubmit={e => {
                       e.preventDefault();
-                console.log({
-                    variables: {
-                        date: input_date.value,
-                        time: input_time.value,
-                        phone_number: input_phone.value,
-                        description: input_desc.value,
-                    }
-                })
-
                       addCallback({
                           variables: {
                               date: input_date.value,

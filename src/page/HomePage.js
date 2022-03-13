@@ -16,7 +16,7 @@ import {useQuery} from "@apollo/client";
 import {GET_ABOUT_SHORT} from "../gql/query";
 
 
-const HomePage = () => {
+const HomePage = ({screenWidth}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
 
@@ -45,8 +45,8 @@ const HomePage = () => {
             <TitleMain/>
             <AboutMe text={(data.queryAboutMe)[0].title_short}/>
             <MyFolio/>
-            <News/>
-            <InformQuestions/>
+            <News screenWidth={screenWidth} />
+            <InformQuestions screenWidth={screenWidth} />
             <Footer/>
             {scrollPosition>100&&<UpButton/>}
             {scrollPosition<2500&&<RingButton/>}

@@ -10,7 +10,7 @@ import img4 from "../assets/folio/myFolio4.jpg"
 import img5 from "../assets/folio/myFolio5.jpg"
 import img6 from "../assets/folio/myFolio6.jpg"
 
-const PortfolioPage = () => {
+const PortfolioPage = ({screenWidth}) => {
 
     // const screenWidth = window.screen.availWidth
 
@@ -21,12 +21,12 @@ const PortfolioPage = () => {
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
-    const [screenWidth, setScreenWidth] = useState(window.screen.width)
+    // const [screenWidth, setScreenWidth] = useState(window.screen.width)
     console.log(screenWidth)
 
-    function addIngredientHandler(){
-        setScreenWidth(window.screen.width)
-    }
+    // function addIngredientHandler(){
+    //     setScreenWidth(window.screen.width)
+    // }
 
     useLayoutEffect(() => {
         if (navbarRef.current) {
@@ -40,10 +40,10 @@ const PortfolioPage = () => {
         }
     }, []);
 
-    useEffect(() => {
-        window.addEventListener('resize', addIngredientHandler, false);
-        return () => window.removeEventListener('resize',addIngredientHandler)
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener('resize', addIngredientHandler, false);
+    //     return () => window.removeEventListener('resize',addIngredientHandler)
+    // }, []);
 
     useEffect(()=>{
         setContentHeight(()=>(Number(document.documentElement.clientHeight) - navbarHeight-footerHeight))

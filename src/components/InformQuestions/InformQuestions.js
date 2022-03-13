@@ -4,7 +4,7 @@ import ContactInfo from "./ContactInfo/ContactInfo";
 import CallBack from "./CallBack/CallBack";
 import styles from "./InformQuestions.module.scss"
 
-const InformQuestions = () => {
+const InformQuestions = ({screenWidth}) => {
     return (
         <div className='bg-dark text-center' >
 
@@ -12,10 +12,10 @@ const InformQuestions = () => {
                 <a name='contact'></a>
                 <Row>
                     <Col xl={6} lg={12}>
-                        <ContactInfo/>
+                        <ContactInfo screenWidth={screenWidth} />
                     </Col>
                     <Col xl={6} lg={12}>
-                        <CallBack/>
+                        <CallBack screenWidth={screenWidth} />
                     </Col>
                 </Row>
             </Container>

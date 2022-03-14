@@ -34,22 +34,36 @@ const GetInTouch = ({screenWidth}) => {
                       });
 
                   }}>
-                <Row className="mb-3 justify-content-center flex-column  flex-md-row flex-md-nowrap">
-                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-end align-items-center mb-3 mb-md-0'>
-                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1'>
+                <Row>
+                    <Row className="mb-3 justify-content-center align-items-center">
+                        <Form.Group  controlId="formGridEmail" className='col-2 col-md-2'>
+                            +380
+                        </Form.Group>
+
+                        <Form.Group  controlId="formGridPassword" className='col-5 col-md-4 ps-0 '>
+                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
+                                          ref={node => {input_phone = node;}}
+                                          className='ps-md-5'
+                            />
+                        </Form.Group>
+                    </Row>
+                </Row>
+                <Row className="mb-3 justify-content-center flex-md-nowrap ">
+
+                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1 mt-1'>
                            <DateIcon/>
                         </Form.Group>
 
-                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
                             <Form.Control type="date" ref={node => {input_date = node;}}  />
                         </Form.Group>
-                    </Row>
-                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-start align-items-center '>
-                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1'>
+
+
+                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1 mt-1'>
                             <TimeIcon/>
                         </Form.Group>
 
-                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
                             <select className='form-select ' ref={node => {input_time = node;}}>
                                 <option value="8">8:00</option>
                                 <option value="9">9:00</option>
@@ -67,21 +81,10 @@ const GetInTouch = ({screenWidth}) => {
                                 <option value="21">21:00</option>
                             </select>
                         </Form.Group>
-                    </Row>
+
 
                 </Row>
-                <Row>
-                    <Row className="mb-3 justify-content-center align-items-center">
-                        <Form.Group  controlId="formGridEmail" className='col-2 col-md-2'>
-                            +380
-                        </Form.Group>
 
-                        <Form.Group  controlId="formGridPassword" className='col-5 col-md-4 ps-0 '>
-                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
-                                          ref={node => {input_phone = node;}}/>
-                        </Form.Group>
-                    </Row>
-                </Row>
 
 
                 {/*<Row className="justify-content-center align-items-center  mb-3">*/}
@@ -96,9 +99,10 @@ const GetInTouch = ({screenWidth}) => {
                 {/*</Row>*/}
 
                 <Row className="mb-3 justify-content-center">
-                    <Form.Group as={Col} sm={8} className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group as={Col} md={10} className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Control as="textarea" rows={3} placeholder="Вопросы и пожелания..."
-                                      ref={node => {input_desc = node;}}/>
+                                      ref={node => {input_desc = node;}}
+                        />
                     </Form.Group>
                 </Row>
 

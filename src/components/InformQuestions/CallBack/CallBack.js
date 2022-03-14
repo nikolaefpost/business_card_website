@@ -6,6 +6,7 @@ import classNames from "classnames";
 import styles from "./CallBack.module.scss"
 import CallBackSvg from "../../../assets/images/CallBackSvg";
 import DateIcon from "../../../assets/icons/DateIcon";
+import TimeIcon from "../../../assets/icons/TimeIcon";
 
 
 
@@ -21,7 +22,7 @@ const GetInTouch = ({screenWidth}) => {
         <div className={classNames('bg-dark text-center px-2 px-md-0', styles.title)}>
             {/*<img className='' style={{marginTop: '10vh'}} src={callback}/>*/}
             <CallBackSvg width={(screenWidth > 600)? '433' : '300'} />
-            <Form className='mt-2 mt-sm-5 px-2 px-sm-0' onSubmit={e => {
+            <Form className='mt-2 mt-sm-5 ' onSubmit={e => {
                       e.preventDefault();
                       addCallback({
                           variables: {
@@ -39,16 +40,16 @@ const GetInTouch = ({screenWidth}) => {
                            <DateIcon/>
                         </Form.Group>
 
-                        <Form.Group className='col-10 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
                             <Form.Control type="date" ref={node => {input_date = node;}}  />
                         </Form.Group>
                     </Row>
-                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-start align-items-center'>
+                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-start align-items-center '>
                         <Form.Group  controlId="formGridEmail" className='col-1 col-md-1'>
-                            <i className="bi bi-clock"></i>
+                            <TimeIcon/>
                         </Form.Group>
 
-                        <Form.Group className='col-10 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
                             <select className='form-select ' ref={node => {input_time = node;}}>
                                 <option value="8">8:00</option>
                                 <option value="9">9:00</option>
@@ -67,17 +68,22 @@ const GetInTouch = ({screenWidth}) => {
                             </select>
                         </Form.Group>
                     </Row>
-                </Row>
-                <Row className="mb-3 justify-content-center align-items-center">
-                    <Form.Group  controlId="formGridEmail" className='col-2 col-md-2'>
-                        +380
-                    </Form.Group>
 
-                    <Form.Group  controlId="formGridPassword" className='col-10 col-md-4'>
-                        <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
-                                      ref={node => {input_phone = node;}}/>
-                    </Form.Group>
                 </Row>
+                <Row>
+                    <Row className="mb-3 justify-content-center align-items-center">
+                        <Form.Group  controlId="formGridEmail" className='col-2 col-md-2'>
+                            +380
+                        </Form.Group>
+
+                        <Form.Group  controlId="formGridPassword" className='col-5 col-md-4 ps-0 '>
+                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
+                                          ref={node => {input_phone = node;}}/>
+                        </Form.Group>
+                    </Row>
+                </Row>
+
+
                 {/*<Row className="justify-content-center align-items-center  mb-3">*/}
                 {/*    <Form.Group as={Col} sm={2}>*/}
                 {/*        +3 80*/}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Col, Form, Row} from "react-bootstrap";
 import {ADD_CALLBACK} from "../../../gql/query";
 import {useMutation} from "@apollo/client";
@@ -12,11 +12,13 @@ import TimeIcon from "../../../assets/icons/TimeIcon";
 
 const GetInTouch = ({screenWidth}) => {
     let input_date, input_time, input_phone, input_desc;
+    useEffect(()=>{input_date.value = '2022-03-15'},[])
 
     const [addCallback, {data, loading, error}] = useMutation(ADD_CALLBACK);
 
     if (loading) return 'Submitting...';
     if (error) return `Submission error! ${error.message}`;
+
 
     return (
         <div className={classNames('bg-dark text-center px-2 px-md-0', styles.title)}>
@@ -24,14 +26,15 @@ const GetInTouch = ({screenWidth}) => {
             <CallBackSvg width={(screenWidth > 600)? '433' : '300'} />
             <Form className='mt-2 mt-sm-5 ' onSubmit={e => {
                       e.preventDefault();
-                      addCallback({
-                          variables: {
-                              date: input_date.value,
-                              time: input_time.value,
-                              phone_number: input_phone.value,
-                              description: input_desc.value,
-                          }
-                      });
+                console.log(input_date)
+                      // addCallback({
+                      //     variables: {
+                      //         date: input_date.value,
+                      //         time: input_time.value,
+                      //         phone_number: input_phone.value,
+                      //         description: input_desc.value,
+                      //     }
+                      // });
 
                   }}>
                 <Row>
@@ -41,7 +44,7 @@ const GetInTouch = ({screenWidth}) => {
                         </Form.Group>
 
                         <Form.Group  controlId="formGridPassword" className='col-5 col-md-4 ps-0 '>
-                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
+                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _"
                                           ref={node => {input_phone = node;}}
                                           className='ps-md-5'
                             />
@@ -54,8 +57,8 @@ const GetInTouch = ({screenWidth}) => {
                            <DateIcon/>
                         </Form.Group>
 
-                        <Form.Group className='col-4 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
-                            <Form.Control type="date" ref={node => {input_date = node;}}  />
+                        <Form.Group className='col-5 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
+                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" type="date" ref={node => {input_date = node;}}  />
                         </Form.Group>
 
 

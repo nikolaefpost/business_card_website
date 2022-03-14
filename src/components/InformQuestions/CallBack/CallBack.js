@@ -5,6 +5,7 @@ import {useMutation} from "@apollo/client";
 import classNames from "classnames";
 import styles from "./CallBack.module.scss"
 import CallBackSvg from "../../../assets/images/CallBackSvg";
+import DateIcon from "../../../assets/icons/DateIcon";
 
 
 
@@ -32,43 +33,61 @@ const GetInTouch = ({screenWidth}) => {
                       });
 
                   }}>
-                <Row className="mb-3 justify-content-center">
+                <Row className="mb-3 justify-content-center flex-column  flex-md-row flex-md-nowrap">
+                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-end align-items-center mb-3 mb-md-0'>
+                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1'>
+                           <DateIcon/>
+                        </Form.Group>
 
-                    <Form.Group as={Col} sm={3} controlId="formGridEmail">
-                        <Form.Control type="date" ref={node => {input_date = node;}}  />
-                    </Form.Group>
+                        <Form.Group className='col-10 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                            <Form.Control type="date" ref={node => {input_date = node;}}  />
+                        </Form.Group>
+                    </Row>
+                    <Row  controlId="formGridEmailq" className='justify-content-center justify-content-md-start align-items-center'>
+                        <Form.Group  controlId="formGridEmail" className='col-1 col-md-1'>
+                            <i className="bi bi-clock"></i>
+                        </Form.Group>
 
-                    <Form.Group as={Col} sm={3} controlId="formGridState"
-                                >
-                        <select className='form-select ' ref={node => {input_time = node;}}>
-                            <option value="8">8:00</option>
-                            <option value="9">9:00</option>
-                            <option value="10">10:00</option>
-                            <option value="11">11:00</option>
-                            <option value="12">12:00</option>
-                            <option value="13">13:00</option>
-                            <option value="14">14:00</option>
-                            <option value="15">15:00</option>
-                            <option value="16">16:00</option>
-                            <option value="17">17:00</option>
-                            <option value="18">18:00</option>
-                            <option value="19">19:00</option>
-                            <option value="20">20:00</option>
-                            <option value="21">21:00</option>
-                        </select>
-                    </Form.Group>
-
+                        <Form.Group className='col-10 col-md-4 ms-2 ms-md-0 ps-md-0' controlId="formGridDate">
+                            <select className='form-select ' ref={node => {input_time = node;}}>
+                                <option value="8">8:00</option>
+                                <option value="9">9:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                            </select>
+                        </Form.Group>
+                    </Row>
                 </Row>
-                <div className="row justify-content-center align-items-center  mb-3">
-                    <div className=" col-sm-2 ">
-                        +3 80
-                    </div>
+                <Row className="mb-3 justify-content-center align-items-center">
+                    <Form.Group  controlId="formGridEmail" className='col-2 col-md-2'>
+                        +380
+                    </Form.Group>
 
-                    <div className=" col-sm-3">
+                    <Form.Group  controlId="formGridPassword" className='col-10 col-md-4'>
                         <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'
                                       ref={node => {input_phone = node;}}/>
-                    </div>
-                </div>
+                    </Form.Group>
+                </Row>
+                {/*<Row className="justify-content-center align-items-center  mb-3">*/}
+                {/*    <Form.Group as={Col} sm={2}>*/}
+                {/*        +3 80*/}
+                {/*    </Form.Group>*/}
+
+                {/*    <Form.Group as={Col} sm={3}>*/}
+                {/*        <Form.Control placeholder="_ _   _ _ _  _ _  _ _" id='phone'*/}
+                {/*                      ref={node => {input_phone = node;}}/>*/}
+                {/*    </Form.Group>*/}
+                {/*</Row>*/}
 
                 <Row className="mb-3 justify-content-center">
                     <Form.Group as={Col} sm={8} className="mb-3" controlId="exampleForm.ControlTextarea1">

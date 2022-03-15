@@ -8,12 +8,11 @@ import CallBackSvg from "../../../assets/images/CallBackSvg";
 import DateIcon from "../../../assets/icons/DateIcon";
 import TimeIcon from "../../../assets/icons/TimeIcon";
 
-
+const currentDate = new Date()
+let defaultDate = `${currentDate.getFullYear()}-${(currentDate.getMonth()<10)? '0'+(currentDate.getMonth() +1): currentDate.getMonth() +1}-${currentDate.getDate()}`
 
 const GetInTouch = ({screenWidth}) => {
     let input_date, input_time, input_phone, input_desc;
-    const currentDate = new Date()
-    let defaultDate = `${currentDate.getDate()}-${currentDate.getMonth()+1}-${currentDate.getFullYear()}`
 
     const [addCallback, {data, loading, error}] = useMutation(ADD_CALLBACK);
 
@@ -59,7 +58,8 @@ const GetInTouch = ({screenWidth}) => {
                         </Form.Group>
 
                         <Form.Group className='col-5 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
-                            <Form.Control defaultValue = '2022-03-15' placeholder="_ _   _ _ _  _ _  _ _" type="date" ref={node => {input_date = node;}}  />
+                            <Form.Control defaultValue = {defaultDate} placeholder="_ _   _ _ _  _ _  _ _" type="date"
+                                          ref={node => {input_date = node;}} className='pe-1 pe-md-auto' />
                         </Form.Group>
 
 

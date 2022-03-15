@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CallBackSvg = ({width}) => {
-    console.log(width)
     return (
         <>
             <svg width={width} height="82" viewBox="0 0 433 82" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -26,16 +26,16 @@ const GetInTouch = ({screenWidth}) => {
             <CallBackSvg width={(screenWidth > 600)? '433' : '300'} />
             <Form className='mt-2 mt-sm-5 ' onSubmit={e => {
                       e.preventDefault();
-                // console.log(input_date.value)
-                //       addCallback({
-                //           variables: {
-                //               date: input_date.value,
-                //               time: input_time.value,
-                //               phone_number: input_phone.value,
-                //               description: input_desc.value,
-                //           }
-                //       });
-
+                console.log(input_date.value)
+                      // addCallback({
+                      //     variables: {
+                      //         date: input_date.value,
+                      //         time: input_time.value,
+                      //         phone_number: input_phone.value,
+                      //         description: input_desc.value,
+                      //     }
+                      // });
+                        alert(`Перезвоним Вам ${input_date.value} в ${input_time.value}:00, по телефону ${input_phone.value}`)
                   }}>
                 <Row>
                     <Row className="mb-3 justify-content-center align-items-center">

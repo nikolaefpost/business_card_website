@@ -12,7 +12,9 @@ import TimeIcon from "../../../assets/icons/TimeIcon";
 
 const GetInTouch = ({screenWidth}) => {
     let input_date, input_time, input_phone, input_desc;
-    useEffect(()=>{input_date.value = '2022-03-15'},[])
+    const currentDate = new Date()
+    let defaultDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`
+    console.log(defaultDate)
 
     const [addCallback, {data, loading, error}] = useMutation(ADD_CALLBACK);
 
@@ -26,15 +28,15 @@ const GetInTouch = ({screenWidth}) => {
             <CallBackSvg width={(screenWidth > 600)? '433' : '300'} />
             <Form className='mt-2 mt-sm-5 ' onSubmit={e => {
                       e.preventDefault();
-                console.log(input_date)
-                      // addCallback({
-                      //     variables: {
-                      //         date: input_date.value,
-                      //         time: input_time.value,
-                      //         phone_number: input_phone.value,
-                      //         description: input_desc.value,
-                      //     }
-                      // });
+                // console.log(input_date.value)
+                //       addCallback({
+                //           variables: {
+                //               date: input_date.value,
+                //               time: input_time.value,
+                //               phone_number: input_phone.value,
+                //               description: input_desc.value,
+                //           }
+                //       });
 
                   }}>
                 <Row>
@@ -58,7 +60,7 @@ const GetInTouch = ({screenWidth}) => {
                         </Form.Group>
 
                         <Form.Group className='col-5 col-md-4 ms-2 ms-md-0 ps-0' controlId="formGridDate">
-                            <Form.Control placeholder="_ _   _ _ _  _ _  _ _" type="date" ref={node => {input_date = node;}}  />
+                            <Form.Control defaultValue = {defaultDate} placeholder="_ _   _ _ _  _ _  _ _" type="date" ref={node => {input_date = node;}}  />
                         </Form.Group>
 
 

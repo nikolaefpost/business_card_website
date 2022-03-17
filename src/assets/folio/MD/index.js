@@ -1,0 +1,6 @@
+export {default as img1_md} from "./myFolio1_md.jpg"
+export {default as img2_md} from "./myFolio2_md.jpg"
+export {default as img3_md} from "./myFolio3_md.jpg"
+export {default as img4_md} from "./myFolio4_md.jpg"
+export {default as img5_md} from "./myFolio5_md.jpg"
+export {default as img6_md} from "./myFolio6_md.jpg"

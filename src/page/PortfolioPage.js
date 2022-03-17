@@ -1,13 +1,7 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import styles from "./page.module.css"
-import img1 from "../assets/folio/myFolio1.jpg"
-import img2 from "../assets/folio/myFolio2.jpg"
-import img3 from "../assets/folio/myFolio3.jpg"
-import img4 from "../assets/folio/myFolio4.jpg"
-import img5 from "../assets/folio/myFolio5.jpg"
-import img6 from "../assets/folio/myFolio6.jpg"
-
 import {NavBar, PhotoViewMobil, PhotoViewScreen, UpButton} from "../components";
+import {img1, img2, img3, img4, img5, img6} from "../assets/folio/XXl";
 
 const PortfolioPage = ({screenWidth, scrollPosition}) => {
     console.log(scrollPosition)

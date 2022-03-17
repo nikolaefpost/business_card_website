@@ -2,7 +2,7 @@
 
 .mainBackground{
   background-repeat: no-repeat;
-  background-image: url('../../assets/images/frontMain.jpg');
+  background-image: url('../../assets/images/frontMainXXlZip.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-color: $main_light;
@@ -14,7 +14,6 @@
 @media(max-width: 600px) {
   .mainBackground{
     background-position: 50% 75%;
-    background-image: url('../../assets/images/frontMain1.jpg');
-    //height: 100vh;
+    background-image: url('../../assets/images/frontMainM.webp');
   }
 }

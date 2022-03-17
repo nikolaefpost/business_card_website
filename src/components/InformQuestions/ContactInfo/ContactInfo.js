@@ -3,6 +3,7 @@ import classNames from "classnames";
 import styles from "./ContactInfo.module.scss"
 import title from "../../../assets/images/ContactImg.png"
 import ContactImg from "../../../assets/images/ContactImg";
+import {FACEBOOK, INSTA} from "../../../utils/consts";
 
 const ContactInfo = ({screenWidth}) => {
     return (
@@ -21,10 +22,10 @@ const ContactInfo = ({screenWidth}) => {
                         <span className={classNames('col-12 text-start', styles.email)} >yemelyanov.eduard@gmail.com</span>
                     </div>
                 </div>
-                <div>
-                    <i className="bi bi-facebook me-5"></i>
-                    <i className="bi bi-twitter me-5"></i>
-                    <i className="bi bi-instagram "></i>
+                <div className={styles.cursor}>
+                    <i className="bi bi-facebook me-4" onClick={() => window.open(FACEBOOK)}></i>
+                    <i className="bi bi-twitter me-4" onClick={() => window.open(INSTA)}></i>
+                    <i className="bi bi-instagram " onClick={() => window.open(INSTA)}></i>
                 </div>
 
             </div>

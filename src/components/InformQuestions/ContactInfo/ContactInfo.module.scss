@@ -1,6 +1,10 @@
 @import '../../../styles/colors';
 @import '../../../styles/all';
 
+.cursor:hover{
+  cursor: pointer;
+}
+
 .email{
   color: $purple;
 }

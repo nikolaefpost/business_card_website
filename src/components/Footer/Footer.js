@@ -3,8 +3,7 @@ import {Col, Container, Image, Row} from "react-bootstrap";
 import classNames from "classnames";
 import styles from './Footer.module.scss'
 import footer from '../../assets/images/FooterImg.png'
-import {FACEBOOK, HOME_ROUTE, INSTA} from "../../utils/consts";
-import login from "../../assets/images/navbarLogo.png";
+import {FACEBOOK, HOME_ROUTE, INSTA, LINKEDIN} from "../../utils/consts";
 import {Link} from "react-router-dom";
 
 const Footer = () => {
@@ -23,12 +22,12 @@ const Footer = () => {
 
             </Row>
             <Row className='justify-content-between align-items-center pt-3 pb-4 '>
-                <Col xl={6} sm={12} className='text-center mb-sm-2 mb-xl-0'>
+                <Col xl={6} sm={12} className={classNames('text-center mb-sm-2 mb-xl-0', styles.cursor)} onClick={() => window.open(LINKEDIN)}>
                     Ведущая Виктория Copyright © 2022 Pilot
                 </Col>
-                <Col  xl={2} sm={12} className='text-center'>
-                    <i className="bi bi-facebook me-2" onClick={() => window.open(FACEBOOK)}></i>
-                    <i className="bi bi-twitter me-2" onClick={() => window.open(INSTA)}></i>
+                <Col  xl={2} sm={12} className={classNames('text-center', styles.cursor)}>
+                    <i className="bi bi-facebook me-4" onClick={() => window.open(FACEBOOK)}></i>
+                    <i className="bi bi-twitter me-4" onClick={() => window.open(INSTA)}></i>
                     <i className="bi bi-instagram " onClick={() => window.open(INSTA)}></i>
                 </Col>
 

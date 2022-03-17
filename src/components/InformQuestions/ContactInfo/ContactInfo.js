@@ -13,8 +13,8 @@ const ContactInfo = ({screenWidth}) => {
                 <div className='row mb-3 px-3 px-sm-0'>
                     <div className='col-3 col-sm-4 text-end'>Телефон:</div>
                     <div className='col-9 col-sm-8  row '>
-                        <span className='col-12 text-start'>+8 050 3180980</span>
-                        <span className='col-12 text-start'>+8 093 9824981 (Viber Telegram)</span>
+                        <span className='col-12 text-start'>+38 050 3180980</span>
+                        <span className='col-12 text-start'>+38 093 9824981 (Viber Telegram)</span>
                     </div>
                     <div className='col-3 col-sm-4 text-end'>Email:</div>
                     <div className='col-9 col-sm-8 row'>

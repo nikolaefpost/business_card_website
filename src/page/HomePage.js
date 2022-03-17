@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+
 
 import {
     AboutMe,
@@ -17,22 +17,6 @@ import {GET_ABOUT_SHORT} from "../gql/query";
 
 
 const HomePage = ({screenWidth, scrollPosition}) => {
-    // const [scrollPosition, setScrollPosition] = useState(0);
-
-
-
-    // const handleScroll = () => {
-    //     const position = window.pageYOffset;
-    //     setScrollPosition(position);
-    // };
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
 
     const { loading, error, data } = useQuery(GET_ABOUT_SHORT);
     if (loading) return <p>Loading...</p>;

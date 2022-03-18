@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from "classnames";
 import styles from "./ContactInfo.module.scss"
-import title from "../../../assets/images/ContactImg.png"
 import ContactImg from "../../../assets/images/ContactImg";
 import {FACEBOOK, INSTA} from "../../../utils/consts";
 

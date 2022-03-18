@@ -23,7 +23,8 @@ const Footer = () => {
             </Row>
 
             <Row className='justify-content-between align-items-center pt-3 pb-4 '>
-                <Col xl={6} sm={12} className={classNames('text-center mb-sm-2 mb-xl-0', styles.cursor)} onClick={() => window.open(LINKEDIN)}>
+                <Col xl={6} sm={12} className={classNames('text-center mb-sm-2 mb-xl-0', styles.cursor)}
+                     onClick={() => window.open(LINKEDIN)}>
                     Ведущая Виктория Copyright © 2022 Pilot
                 </Col>
                 <Col  xl={2} sm={12} className={classNames('text-center', styles.cursor)}>

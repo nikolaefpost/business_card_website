@@ -25,7 +25,7 @@ const NavBar = () => {
                             {/*    <NavDropdown.Item href="folio">Фото</NavDropdown.Item>*/}
                             {/*    <NavDropdown.Item href="folio">Видео</NavDropdown.Item>*/}
                             {/*</NavDropdown>*/}
-                            <Nav.Link href="#news" onClick={()=>navigate(HOME_ROUTE)}>Новости</Nav.Link>
+                            <Nav.Link href="#news" onClick={()=>navigate(HOME_ROUTE)}>Информация</Nav.Link>
                             <Nav.Link href="#contact" onClick={()=>navigate(HOME_ROUTE)}>Контакты</Nav.Link>
                             <Nav.Link href="#link">
                                 <div className={classNames( styles.social)}>

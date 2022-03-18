@@ -23,7 +23,7 @@ const HomePage = ({screenWidth, scrollPosition}) => {
     if (error) return <p>Error</p>;
 
     return (<>
-
+        <div  style={{position: 'relative'}}>
             <NavBar />
             <ImgMain/>
             <TitleMain/>
@@ -34,7 +34,7 @@ const HomePage = ({screenWidth, scrollPosition}) => {
             <Footer/>
             {scrollPosition>100&&<UpButton/>}
             {scrollPosition<2500&&<RingButton/>}
-
+        </div>
         </>
     );
 };

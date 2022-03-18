@@ -6,7 +6,7 @@ import classNames from "classnames";
 import styles from "./News.module.scss"
 import title from "../../assets/images/newsTitle.png"
 import {MainButton} from "../Button";
-import { ME_ROUTE} from "../../utils/consts";
+import {ME_ROUTE, NEWS_ROUTE} from "../../utils/consts";
 
 import styled, { keyframes } from 'styled-components';
 import {bounce} from 'react-animations';
@@ -41,7 +41,7 @@ const News = ({screenWidth}) => {
                         )}
                     </Row>
                 </Container>
-                <MainButton path={ME_ROUTE}/>
+                <MainButton path={NEWS_ROUTE}/>
             </div>
         </>
     );

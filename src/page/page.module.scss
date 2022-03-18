@@ -1,0 +1,31 @@
+@import "../styles/colors.scss";
+
+.wraper{
+    //height: 100vh;
+    background-color: #F9F4F1;
+    text-align: center;
+}
+
+.card_img{
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
+
+.title{
+    margin: 5vh 0 10vh;
+    &_text{
+        width: 30%;
+        margin: 3vh auto 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .title{
+        margin: 5vh 0 10vh;
+        &_text{
+            width: 90%;
+            margin: 3vh auto 0;
+        }
+    }
+}

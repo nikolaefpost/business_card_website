@@ -1,5 +1,18 @@
 @import 'src/styles/colors';
 
+p {
+  text-indent: 20px;
+  text-align: justify;
+  line-height: 1.5rem;
+
+  &:first-letter {
+    //font-family: "Times New Roman", Times, serif;
+    font-size: 200%;
+    color: $purple;
+    font-style: italic;
+  }
+}
+
 .title{
   padding-top: 10vh;
 }
@@ -7,5 +20,11 @@
 @font-face{
   font-family: 'Russo';
    src: url("../assets/fonts/RussoOne-Regular.ttf")format("truetype")
+}
+
+@media(max-width: 600px) {
+  p{
+    line-height: 1.4rem;
+  }
 }
 

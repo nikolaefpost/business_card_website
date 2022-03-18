@@ -1,5 +1,5 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
-import styles from "./page.module.css"
+import styles from "./page.module.scss"
 import {NavBar, PhotoViewMobil, PhotoViewScreen, UpButton} from "../components";
 import {img1, img2, img3, img4, img5, img6} from "../assets/folio/XXl";
 

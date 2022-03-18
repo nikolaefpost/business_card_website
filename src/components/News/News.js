@@ -11,6 +11,7 @@ import {ME_ROUTE, NEWS_ROUTE} from "../../utils/consts";
 import styled, { keyframes } from 'styled-components';
 import {bounce} from 'react-animations';
 import NewsTitle from "../../assets/images/NewsTitle";
+import {CardNews} from "../index";
 const HeadShake = styled.div`animation: 6s ${keyframes`${bounce}`} 5`;
 
 const News = ({screenWidth}) => {
@@ -29,15 +30,16 @@ const News = ({screenWidth}) => {
                 <Container className='bg-dark text-light pb-2 p-md-5 mt-5 mb-1'>
                     <Row>
                         {data.queryNews.map(item=>
-                            <Col key={item.id} xl={4} lg={12} className='mb-md-3 mb-xl-0'>
-                                <Card bg='dark' onClick={() => window.open(item.resource_link)}>
-                                    <Card.Img variant="top" src={item.image_src}/>
-                                    <Card.Body>
-                                        <Card.Title className={styles.news_article} >{item.title}</Card.Title>
-                                        <Card.Text>{item.description}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+                            // <Col key={item.id} xl={4} lg={12} className='mb-md-3 mb-xl-0'>
+                            //     <Card bg='dark' onClick={() => window.open(item.resource_link)}>
+                            //         <Card.Img variant="top" src={item.image_src}/>
+                            //         <Card.Body>
+                            //             <Card.Title className={styles.news_article} >{item.title}</Card.Title>
+                            //             <Card.Text>{item.description}</Card.Text>
+                            //         </Card.Body>
+                            //     </Card>
+                            // </Col>
+                            <CardNews news={item} col={4} bg='dark'/>
                         )}
                     </Row>
                 </Container>

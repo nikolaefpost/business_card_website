@@ -2,7 +2,19 @@ import {gql} from '@apollo/client';
 
 export const GET_NEWS = gql`
    query MyQuery {
-  queryNews {
+  queryNews(first:3) {
+    description
+    id
+    image_src
+    resource_link
+    title
+  }
+}
+`;
+
+export const GET_NEWS1 = gql`
+   query QueryNews($offset: Int, $first: Int) {
+  queryNews(offset: $offset, first: $first) {
     description
     id
     image_src

@@ -1,7 +1,28 @@
 @import "../../styles/colors.scss";
 
-.card_img{
-  height: 300px;
-  width: auto;
-  object-fit: cover;
+.card{
+  padding-bottom: 1rem;
+  &_img{
+    height: 270px;
+    width: auto;
+    object-fit: cover;
+  }
+  &_title{
+    height: 3rem;
+    &_text{
+      vertical-align: middle;
+    }
+  }
+  &_text{
+    max-height: 14vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &_text_full{
+  height: 8vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
+
+

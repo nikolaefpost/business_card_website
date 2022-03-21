@@ -27,19 +27,10 @@ const News = ({screenWidth}) => {
                     {/*<Image src={title} style={{marginTop: '10vh'}} className='mx-md-2' fluid/>*/}
                     <NewsTitle width={(screenWidth > 600)? '518' : '359'}/>
                 </HeadShake>
-                <Container className='bg-dark text-light pb-2 p-md-5 mt-5 mb-1'>
+                <Container className='bg-dark text-light pb-2 p-md-5 mt-5 mb-1' >
                     <Row>
                         {data.queryNews.map(item=>
-                            // <Col key={item.id} xl={4} lg={12} className='mb-md-3 mb-xl-0'>
-                            //     <Card bg='dark' onClick={() => window.open(item.resource_link)}>
-                            //         <Card.Img variant="top" src={item.image_src}/>
-                            //         <Card.Body>
-                            //             <Card.Title className={styles.news_article} >{item.title}</Card.Title>
-                            //             <Card.Text>{item.description}</Card.Text>
-                            //         </Card.Body>
-                            //     </Card>
-                            // </Col>
-                            <CardNews news={item} col={4} bg='dark'/>
+                            <CardNews key={item.id} news={item} col={4} bg='dark'/>
                         )}
                     </Row>
                 </Container>

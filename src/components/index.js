@@ -10,6 +10,7 @@ export {default as News} from "./News/News"
 export {default as TitleAboutMe} from "./TitleAboutMe/TitleAboutMe"
 export {default as TitleMain} from "./TitleMain/TitleMain"
 export {default as CardNews} from "./CardNews/CardNews"
+export {default as PaginationBasic} from "./Pagination/paginationBasic"
 
 export * from "./Button";
 export * from "./PhotoView";

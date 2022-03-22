@@ -12,10 +12,10 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
     const [page, setPage] = useState(0)
     const [load, setLoad] = useState(true)
     let scrollHeight = document.body.scrollHeight - document.body.clientHeight;
-    console.log('Top', window.pageYOffset)
-    console.log('scrollHeight', scrollHeight)
-    console.log('scrollPosition', scrollPosition)
-    console.log('news, page', news, page)
+    // console.log('Top', window.pageYOffset)
+    // console.log('scrollHeight', scrollHeight)
+    // console.log('scrollPosition', scrollPosition)
+    // console.log('news, page', news, page)
 
     const {loading, error, data, fetchMore} = useQuery(GET_NEWS1);
 

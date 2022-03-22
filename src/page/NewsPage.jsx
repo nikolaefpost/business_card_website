@@ -11,25 +11,15 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
     const [news, setNews] = useState([])
     const [page, setPage] = useState(0)
     const [load, setLoad] = useState(true)
-    let scrollHeight = document.body.scrollHeight
-        - document.body.clientHeight
+    let scrollHeight = document.body.scrollHeight - document.body.clientHeight;
     console.log('Top', window.pageYOffset)
     console.log('scrollHeight', scrollHeight)
     console.log('scrollPosition', scrollPosition)
     console.log('news, page', news, page)
 
-    const {loading, error, data, fetchMore} = useQuery(GET_NEWS1, {
-        variables: {
-            first: 4,
-        },
-    });
-
-    // useEffect(()=>{
-    //     if (data) setNews(data.queryNews)
-    // },[data])
+    const {loading, error, data, fetchMore} = useQuery(GET_NEWS1);
 
     useEffect(() => {
-        console.log('OPPPPPPP')
         fetchMore({
             variables: (screenWidth > 600) ?
                 {
@@ -43,6 +33,7 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
         }).then(fetchMoreResult => {
             if (fetchMoreResult && (screenWidth > 600)) setNews(fetchMoreResult.data.queryNews)
             else if (screenWidth < 600 && load) {
+                setPage((pre)=>pre+1)
                 setNews((pre) => [...pre, ...fetchMoreResult.data.queryNews])
                 setLoad(false)
             }
@@ -51,11 +42,7 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
     }, [page, load])
 
     useEffect(() => {
-
-        if (scrollPosition > 50 && scrollPosition >= scrollHeight-10) {
-            // setPage((pre) => pre + 1)
-            setLoad(true);
-        }
+        if (scrollPosition > 50 && scrollPosition >= scrollHeight-10) setLoad(true);
     }, [scrollPosition])
 
     function paginHandle(n) {

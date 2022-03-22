@@ -11,6 +11,8 @@
 
   &_title {
     height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &_text {
       vertical-align: middle;

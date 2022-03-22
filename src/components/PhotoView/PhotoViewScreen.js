@@ -3,14 +3,12 @@ import {Carousel, Container} from "react-bootstrap";
 import styles from "./PhotoView.module.scss"
 
 const PhotoViewScreen = ({contentHeight, handleShow, folio}) => {
-    // console.log(contentHeight)
     return (
         <div className={styles.wraper}>
             <Container style={{height: contentHeight ? contentHeight : 'auto', overflow: "hidden"}}
                        className='d-flex flex-column justify-content-center '>
                 <Carousel fade nextLabel='' prevLabel='' className=''>
                     {folio.map((number) => {
-                        console.log(number)
                          return  ( <Carousel.Item key={number.toString()}>
                                 <img
                                     className="d-block w-auto"

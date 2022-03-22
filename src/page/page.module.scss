@@ -18,7 +18,7 @@
     object-fit: cover;
 }
 
-.title{
+.titles{
     margin: 0 0 2vh;
     &_text{
         width: 50%;
@@ -27,7 +27,7 @@
 }
 
 @media(max-width: 600px) {
-    .title{
+    .titles{
         margin: 3vh 0 5vh;
         &_text{
             width: 90%;

@@ -54,9 +54,9 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
         <div className={styles.wraper}>
             <div>
                 <NavBar/>
-                <div className={styles.title}>
+                <div className={styles.titles}>
                     <NewsTitleW width={(screenWidth > 600) ? '350' : '300'}/>
-                    <p className={styles.title_text}>
+                    <p className={styles.titles_text}>
                         В этом разделе вы найдете ответы на часто задаваемые вопросы. Наверняка они окажутся полезными.
                         Если нужная тема в этом перечне не будет освещена – вы всегда можете задать вопрос лично
                         Виктории.

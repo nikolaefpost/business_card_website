@@ -10,8 +10,12 @@ import {logDOM} from "@testing-library/react";
 const NewsPage = ({screenWidth, scrollPosition}) => {
     const [news, setNews] = useState([])
     const [page, setPage] = useState(0)
-    let scrollHeight = document.body.scrollHeight - document.body.clientHeight-20
+    const [load, setLoad] = useState(true)
+    let scrollHeight = document.body.scrollHeight
+        - document.body.clientHeight
+    console.log('Top', window.pageYOffset)
     console.log('scrollHeight', scrollHeight)
+    console.log('scrollPosition', scrollPosition)
     console.log('news, page', news, page)
 
     const {loading, error, data, fetchMore} = useQuery(GET_NEWS1, {
@@ -38,14 +42,20 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
                 }
         }).then(fetchMoreResult => {
             if (fetchMoreResult && (screenWidth > 600)) setNews(fetchMoreResult.data.queryNews)
-            else if (screenWidth < 600) setNews((pre) => [...pre, ...fetchMoreResult.data.queryNews])
+            else if (screenWidth < 600 && load) {
+                setNews((pre) => [...pre, ...fetchMoreResult.data.queryNews])
+                setLoad(false)
+            }
 
         });
-    }, [page])
+    }, [page, load])
 
     useEffect(() => {
-        console.log('scrollPosition', scrollPosition)
-        if (scrollPosition > 100 && scrollPosition > scrollHeight) setPage((pre) => pre + 1)
+
+        if (scrollPosition > 50 && scrollPosition >= scrollHeight-10) {
+            // setPage((pre) => pre + 1)
+            setLoad(true);
+        }
     }, [scrollPosition])
 
     function paginHandle(n) {

@@ -11,8 +11,6 @@
 
   &_title {
     height: 3rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     &_text {
       vertical-align: middle;
@@ -34,6 +32,9 @@
 
 @media(max-width: 600px) {
   .card_text_full {
+    height: auto;
+  }
+  .card_title {
     height: auto;
   }
 }

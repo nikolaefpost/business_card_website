@@ -10,7 +10,7 @@ import {logDOM} from "@testing-library/react";
 const NewsPage = ({screenWidth, scrollPosition}) => {
     const [news, setNews] = useState([])
     const [page, setPage] = useState(0)
-    let scrollHeight = document.body.scrollHeight - document.body.clientHeight
+    let scrollHeight = document.body.scrollHeight - document.body.clientHeight-20
     console.log('scrollHeight', scrollHeight)
     console.log('news, page', news, page)
 
@@ -45,7 +45,7 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
 
     useEffect(() => {
         console.log('scrollPosition', scrollPosition)
-        if (scrollPosition > 100 && scrollPosition === scrollHeight) setPage((pre) => pre + 1)
+        if (scrollPosition > 100 && scrollPosition > scrollHeight) setPage((pre) => pre + 1)
     }, [scrollPosition])
 
     function paginHandle(n) {

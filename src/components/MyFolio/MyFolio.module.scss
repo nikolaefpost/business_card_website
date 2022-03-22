@@ -1,4 +1,5 @@
 @import 'src/styles/colors';
+@import '../../styles/all';
 
 .folio_title{
   background-image: url("../../assets/images/myFolio.png");
@@ -17,12 +18,12 @@
   border-color: $purple !important;
 }
 
-.modal_img{
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
-  display: block ;
-}
+//.modal_img{
+//  width: auto;
+//  height: 100%;
+//  margin: 0 auto;
+//  display: block ;
+//}
 
 @media(max-width: 600px) {
   .folio_title{

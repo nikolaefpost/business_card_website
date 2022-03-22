@@ -17,6 +17,13 @@ p {
   padding-top: 10vh;
 }
 
+.modal_img{
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  display: block ;
+}
+
 @font-face{
   font-family: 'Russo';
    src: url("../assets/fonts/RussoOne-Regular.ttf")format("truetype")

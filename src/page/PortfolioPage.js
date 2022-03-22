@@ -1,18 +1,27 @@
 import React, {useRef, useState, useLayoutEffect, useEffect} from 'react';
 import styles from "./page.module.scss"
-import {NavBar, PhotoViewMobil, PhotoViewScreen, UpButton} from "../components";
+import {Modal, NavBar, PhotoViewMobil, PhotoViewScreen, UpButton} from "../components";
 import {img1, img2, img3, img4, img5, img6} from "../assets/folio/XXl";
+import {Image} from "react-bootstrap";
+import {images} from "../components/MyFolio/MyFolio";
 
 const PortfolioPage = ({screenWidth, scrollPosition}) => {
-    console.log(scrollPosition)
-
     const navbarRef = useRef();
     const footerRef = useRef();
 
     const [navbarHeight, setNavbarHeight] = useState();
     const [footerHeight, setFooterHeight] = useState();
     const [contentHeight, setContentHeight] = useState()
-    // console.log(screenWidth)
+
+    const [show_img, setShow_img] = useState(null);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = (i) => {
+        setShow(true)
+        setShow_img(i)
+    };
+
 
 
     useLayoutEffect(() => {
@@ -39,16 +48,13 @@ const PortfolioPage = ({screenWidth, scrollPosition}) => {
             <div ref={navbarRef}>
                 <NavBar/>
             </div>
-            {(screenWidth > 1000) ? <PhotoViewScreen screenWidth={screenWidth} contentHeight={contentHeight} folio={folio}/>:
-                <PhotoViewMobil folio={folio}/>
+            {(screenWidth > 1000) ?
+                <PhotoViewScreen handleShow={handleShow} screenWidth={screenWidth} contentHeight={contentHeight} folio={folio}/>:
+                <PhotoViewMobil handleShow={handleShow} folio={folio}/>
             }
-
-            {/*{(screenWidth > 1000) && <div ref={footerRef}*/}
-            {/*      style={{height: '200px'}}*/}
-            {/*>*/}
-            {/*    /!*<Footer/>*!/*/}
-            {/*</div>}*/}
             {scrollPosition>80&&<UpButton/>}
+            <Modal show={show} handleClose={handleClose}><Image src={show_img}
+                                                                className={styles.modal_img}/></Modal>
 
         </div>
     );

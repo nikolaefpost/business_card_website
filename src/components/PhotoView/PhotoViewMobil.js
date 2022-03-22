@@ -1,7 +1,7 @@
 import React from 'react';
 import {Carousel, Container, ListGroup} from "react-bootstrap";
 
-const PhotoViewMobil = ({folio}) => {
+const PhotoViewMobil = ({folio, handleShow}) => {
     return (
         <Container  className='d-flex flex-column justify-content-center'>
             <ListGroup className='bg-dark'>
@@ -12,7 +12,7 @@ const PhotoViewMobil = ({folio}) => {
                             src={number}
                             alt="First slide"
                             width='100%'
-                            // height={Number(contentHeight) ? Number(contentHeight) : 'auto'}
+                            onClick={()=>handleShow(number)}
                         />
                     </ListGroup.Item>)}
             </ListGroup>>

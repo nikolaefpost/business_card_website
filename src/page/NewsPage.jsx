@@ -37,7 +37,6 @@ const NewsPage = ({screenWidth, scrollPosition}) => {
                 setNews((pre) => [...pre, ...fetchMoreResult.data.queryNews])
                 setLoad(false)
             }
-
         });
     }, [page, load])
 

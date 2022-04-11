@@ -2,11 +2,16 @@ import React from 'react';
 import classNames from "classnames";
 import styles from "./ContactInfo.module.scss"
 import ContactImg from "../../../assets/images/ContactImg";
+import {motion} from "framer-motion";
 import {FACEBOOK, INSTA} from "../../../utils/consts";
 
 const ContactInfo = ({screenWidth}) => {
     return (
-        <div className='bg-dark text-center'>
+        <motion.div
+            whileInView={{x: [-200, -100, 0], opacity: [0, 0, 1]}}
+            transition={{duration: .5}}
+            className=' text-center'
+        >
             <div className={styles.title}><ContactImg width={(screenWidth > 600)? '228' : '158'}/></div>
             {/*<img className='' style={{marginTop: '10vh'}} src={title}/>*/}
             <div className='text-center mt-2 mt-sm-5'>
@@ -28,7 +33,7 @@ const ContactInfo = ({screenWidth}) => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     );
 };
 

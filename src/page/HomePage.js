@@ -14,6 +14,7 @@ import {
 } from "../components";
 import {useQuery} from "@apollo/client";
 import {GET_ABOUT_SHORT} from "../gql/query";
+import Layout from "../components/Layout/Layout";
 
 
 const HomePage = ({screenWidth, scrollPosition}) => {
@@ -27,11 +28,14 @@ const HomePage = ({screenWidth, scrollPosition}) => {
             <NavBar />
             <ImgMain/>
             <TitleMain/>
-            <AboutMe text={(data.queryAboutMe)[0].title_short}/>
-            <MyFolio screenWidth={screenWidth} />
-            <News screenWidth={screenWidth} />
-            <InformQuestions screenWidth={screenWidth} />
-            <Footer/>
+            <Layout>
+                <AboutMe text={(data.queryAboutMe)[0].title_short}/>
+                <MyFolio screenWidth={screenWidth} />
+                <News screenWidth={screenWidth} />
+                <InformQuestions screenWidth={screenWidth} />
+                <Footer/>
+            </Layout>
+
             {scrollPosition>100&&<UpButton/>}
             {scrollPosition<2500&&<RingButton/>}
         </div>

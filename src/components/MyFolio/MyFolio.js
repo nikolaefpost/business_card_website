@@ -4,6 +4,7 @@ import {MainButton} from "../Button";
 import styles from './MyFolio.module.scss'
 import {PORTFOLIO_ROUTE} from "../../utils/consts";
 import classNames from "classnames";
+import {motion} from "framer-motion";
 import {Modal} from "../";
 import {img1_md, img2_md, img3_md, img4_md, img5_md, img6_md} from "../../assets/folio/MD";
 import {img1, img2, img3, img4, img5, img6} from "../../assets/folio/XXl";
@@ -22,7 +23,10 @@ const MyFolio = ({screenWidth}) => {
         setShow_img(images[i])
     };
     return (
-        <>
+        <motion.div
+            whileInView={{y: [200, 100, 0], opacity: [0, 0, 1]}}
+            transition={{duration: .5}}
+        >
             <a name='folio'></a>
             <div className={classNames('bg-dark text-center pb-2', styles.folio_title)}>
 
@@ -54,7 +58,7 @@ const MyFolio = ({screenWidth}) => {
 
                 <MainButton path={PORTFOLIO_ROUTE}/>
             </div>
-        </>
+        </motion.div>
     );
 };
 

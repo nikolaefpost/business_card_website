@@ -7,6 +7,7 @@ import styles from "./CallBack.module.scss"
 import CallBackSvg from "../../../assets/images/CallBackSvg";
 import DateIcon from "../../../assets/icons/DateIcon";
 import TimeIcon from "../../../assets/icons/TimeIcon";
+import {motion} from "framer-motion";
 
 const currentDate = new Date()
 let defaultDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() < 10) ? '0' + (currentDate.getMonth() + 1) : currentDate.getMonth() + 1}-${currentDate.getDate()}`
@@ -19,9 +20,12 @@ const GetInTouch = ({screenWidth}) => {
     if (loading) return 'Submitting...';
     if (error) return `Submission error! ${error.message}`;
 
-
     return (
-        <div className={classNames('bg-dark text-center px-2 px-md-0', styles.title)}>
+        <motion.div
+            whileInView={{x: [200, 100, 0], opacity: [0, 0, 1]}}
+            transition={{duration: .5}}
+            className={classNames('text-center px-2 px-md-0', styles.title)}
+        >
             <CallBackSvg width={(screenWidth > 600) ? '433' : '300'}/>
             <Form className='mt-2 mt-sm-5 ' onSubmit={e => {
                 e.preventDefault();
@@ -119,7 +123,7 @@ const GetInTouch = ({screenWidth}) => {
                     Жду звонка!
                 </Button>
             </Form>
-        </div>
+        </motion.div>
     );
 };
 
